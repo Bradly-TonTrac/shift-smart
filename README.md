@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+# shift-smart
+A full-stack employee shift management system built with Next.js 15, TypeScript, Tailwind CSS, and JSON Server. Features role-based authentication, real-time clock in/out tracking, weekly hours summary, and a live dashboard showing shift status across the team.
+>>>>>>> f9d51c35d028df25febdf2d78872dde71b47e3a8
