@@ -1,0 +1,167 @@
+"use server";
+import { Employee } from "@/types";
+import { revalidatePath } from "next/cache";
+import axiosClient from "../api/axiosClient";
+import { TimeStamp } from "@/types";
+import { registry } from "zod/v4/core";
+
+//fetching all employees
+export const getEmployees = async (): Promise<Employee[]> => {
+  try {
+    const { data } = await axiosClient.get(`/employees`);
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to fetch employees");
+  }
+};
+
+//fetching an employee per their ID
+export const getEmployee = async (id: string): Promise<Employee> => {
+  try {
+    const { data } = await axiosClient.get(`/employees/${id}`);
+    return data;
+  } catch (error) {
+    throw new Error("Failed to fetch a user");
+  }
+};
+
+export const getWeeklyHours = async (employeeId: string) => {
+  try {
+    const startOfWeek = new Date();
+    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+    startOfWeek.setHours(0, 0, 0, 0);
+    const { data } = await axiosClient.get(
+      `/timeStamps?employeeId=${employeeId}&status=completed`,
+    );
+    return data.filter(
+      (ts: { clockIn: string }) => new Date(ts.clockIn) >= startOfWeek,
+    );
+  } catch (error) {
+    throw new Error("Failed to fetch weekly hours");
+  }
+};
+
+export const getEmployeeByIdentity = async (
+  identity: string,
+): Promise<Employee | null> => {
+  try {
+    const { data } = await axiosClient.get(`/employees?identity=${identity}`);
+    console.log(data);
+    return data[0] ?? null;
+  } catch (error) {
+    throw new Error("Sorry we ran  into a problem  with the ID's");
+  }
+};
+
+//create employee
+export const addEmployee = async (employee: Employee) => {
+  try {
+    const { data } = await axiosClient.post(`/employees`, employee);
+
+    revalidatePath("/employees");
+    return data;
+  } catch (error) {
+    throw new Error("Failed to add employee");
+  }
+};
+
+//updating an employee
+export const updateEmployee = async (employee: Employee, id: string) => {
+  try {
+    const { data } = await axiosClient.patch(`/employees/${id}`, employee);
+    revalidatePath("/employees");
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to update user");
+  }
+};
+
+//deleting an employee
+export const deleteEmployee = async (id: string) => {
+  try {
+    const { data } = await axiosClient.delete(`/employees/${id}`);
+    revalidatePath("/employees");
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to delete user");
+  }
+};
+
+//******Times Data Manipulation's***********/
+
+//clockIn functionality
+export const clockIn = async (employeeId: string) => {
+  try {
+    const existing = await axiosClient.get(
+      `/timeStamps?employeeId=${employeeId}&status=active`,
+    );
+    if (existing.data.length > 0) {
+      return existing.data[0];
+    }
+
+    const { data } = await axiosClient.post(`/timeStamps`, {
+      employeeId: employeeId,
+      clockIn: new Date().toISOString(),
+      clockOut: "",
+      totalMinutes: "",
+      status: "active",
+    });
+
+    revalidatePath("/employees");
+    return data;
+  } catch (error) {
+    throw new Error(" Failed to clock in");
+  }
+};
+
+//clockOut functionality
+export const clockOut = async (id: string, clockIn: string) => {
+  try {
+    const { data } = await axiosClient.patch(`/timeStamps/${id}`, {
+      clockOut: new Date().toISOString(),
+      totalMinutes: Math.round(
+        (new Date().getTime() - new Date(clockIn).getTime()) / 60000,
+      ),
+      status: "completed",
+    });
+
+    revalidatePath("/employees");
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to create clockOut");
+  }
+};
+
+//delete Timestamp
+export const deleteTimeStamp = async (timeStamp: TimeStamp, id: string) => {
+  try {
+    const { data } = await axiosClient.delete(`/timeStamps/${id}`);
+    revalidatePath("/employees");
+
+    return data;
+  } catch (error) {
+    throw new Error("Failed to delete Timestamp");
+  }
+};
+
+// checks the employees status etc
+export const getShiftStatus = async (employeeId: string) => {
+  try {
+    const { data } = await axiosClient.get(
+      `/timeStamps?employeeId=${employeeId}&status=active`,
+    );
+    return data;
+  } catch (error) {
+    throw new Error(" Time Stamp error not valid");
+  }
+};
+
+//Used for dashboard only
+export const shiftStatus = async () => {
+  const { data } = await axiosClient.get(`/timeStamps?status=active`);
+  return data;
+};

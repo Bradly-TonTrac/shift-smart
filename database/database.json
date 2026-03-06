@@ -1,0 +1,134 @@
+{
+  "employees": [
+    {
+      "id": "c715",
+      "name": "Liam Carter",
+      "email": "liam.carter@TT.org",
+      "department": "Department",
+      "role": "Finance",
+      "identity": "Employee21035"
+    },
+    {
+      "id": "262a",
+      "name": "Olivia Bennett",
+      "email": "olivia.bennett@TT.org",
+      "department": "IT-Support",
+      "role": "IT Technician",
+      "identity": "Employee21036"
+    },
+    {
+      "id": "297c",
+      "name": "Noah Peterson",
+      "email": "noah.peterson@TT.org",
+      "department": "Marketing",
+      "role": "Marketing Assistant",
+      "identity": "Employee21037"
+    },
+    {
+      "id": "81da",
+      "name": "Emma Richardson",
+      "email": "emma.richardson@TT.org",
+      "department": "Sales",
+      "role": "Sales Representative",
+      "identity": "Employee21038"
+    },
+    {
+      "id": "18b8",
+      "name": "Bradly Chauke",
+      "email": "bradlychauke@gmail.com",
+      "department": "Engineering",
+      "role": "Junior",
+      "identity": "2003Brad"
+    },
+    {
+      "id": "ff37",
+      "name": "Paul Osulivan",
+      "email": "paul@gov.com",
+      "department": "Untouchable",
+      "role": "SA Lover",
+      "identity": "pauls123"
+    },
+    {
+      "id": "dc0d",
+      "name": "Clementine Bauch",
+      "email": "clementine@gmail.com",
+      "department": "Dev",
+      "role": "Serior Dev",
+      "identity": "123Bunch"
+    }
+  ],
+  "timeStamps": [
+    {
+      "id": "d483",
+      "employeeId": "c715",
+      "clockIn": "2026-03-05T17:58:02.087Z",
+      "clockOut": "2026-03-06T05:54:31.727Z",
+      "totalMinutes": 716,
+      "status": "completed"
+    },
+    {
+      "id": "9e87",
+      "employeeId": "c715",
+      "clockIn": "2026-03-06T05:58:10.460Z",
+      "clockOut": "2026-03-06T09:55:31.273Z",
+      "totalMinutes": 237,
+      "status": "completed"
+    },
+    {
+      "id": "16cb",
+      "employeeId": "262a",
+      "clockIn": "2026-03-06T05:58:11.089Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "e548",
+      "employeeId": "297c",
+      "clockIn": "2026-03-06T05:58:12.021Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "dfc9",
+      "employeeId": "81da",
+      "clockIn": "2026-03-06T05:58:12.655Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "9976",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-06T05:58:13.734Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "babb",
+      "employeeId": "ff37",
+      "clockIn": "2026-03-06T05:58:14.547Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "5e5a",
+      "employeeId": "dc0d",
+      "clockIn": "2026-03-06T06:13:09.068Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "5dab",
+      "employeeId": "c715",
+      "clockIn": "2026-03-06T09:56:01.568Z",
+      "clockOut": "2026-03-06T09:56:14.104Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    }
+  ]
+}
