@@ -37,6 +37,7 @@ const LoginBtn = () => {
         }
         size="sm"
         variant="outline"
+        className="hover:cursor-pointer"
       >
         Start Your Shift
       </Button>

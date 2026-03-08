@@ -1,20 +1,19 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { employeesValidation } from "@/lib/utils/schemas";
+import { employeesValidation, EmployeeFormData } from "@/lib/utils/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { EmployeeFormData } from "@/lib/utils/schemas";
 import { useForm } from "react-hook-form";
 import {
   addEmployee,
   deleteTimeStamp,
   getShiftStatus,
+  updateEmployee,
+  deleteEmployee,
 } from "@/lib/actions/employeesActions";
 import { EmployeeFormProp } from "@/types";
-import { updateEmployee, deleteEmployee } from "@/lib/actions/employeesActions";
 import { useState } from "react";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
-
 
 // Fixed: single props object with correct types — no second parameter
 const EmployeeForm = ({

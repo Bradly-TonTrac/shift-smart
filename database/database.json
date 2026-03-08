@@ -42,7 +42,7 @@
     },
     {
       "id": "ff37",
-      "name": "Paul Osulivan",
+      "name": "Paul Mabandla",
       "email": "paul@gov.com",
       "department": "Untouchable",
       "role": "SA Lover",
@@ -128,6 +128,22 @@
       "clockIn": "2026-03-06T09:56:01.568Z",
       "clockOut": "2026-03-06T09:56:14.104Z",
       "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "4bdb",
+      "employeeId": "c715",
+      "clockIn": "2026-03-08T10:28:50.340Z",
+      "clockOut": "2026-03-08T10:43:22.620Z",
+      "totalMinutes": 15,
+      "status": "completed"
+    },
+    {
+      "id": "fc8c",
+      "employeeId": "c715",
+      "clockIn": "2026-03-08T10:43:37.975Z",
+      "clockOut": "2026-03-08T15:28:33.353Z",
+      "totalMinutes": 285,
       "status": "completed"
     }
   ]
