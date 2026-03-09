@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import axiosClient from "../api/axiosClient";
 import { TimeStamp } from "@/types";
 import { registry } from "zod/v4/core";
+import { success } from "zod";
 
 //fetching all employees
 export const getEmployees = async (): Promise<Employee[]> => {
@@ -26,6 +27,7 @@ export const getEmployee = async (id: string): Promise<Employee> => {
   }
 };
 
+//get Employees Weekly hours
 export const getWeeklyHours = async (employeeId: string) => {
   try {
     const startOfWeek = new Date();
@@ -42,6 +44,7 @@ export const getWeeklyHours = async (employeeId: string) => {
   }
 };
 
+//get Employee by their Identity
 export const getEmployeeByIdentity = async (
   identity: string,
 ): Promise<Employee | null> => {
@@ -60,9 +63,13 @@ export const addEmployee = async (employee: Employee) => {
     const { data } = await axiosClient.post(`/employees`, employee);
 
     revalidatePath("/employees");
-    return data;
+    return {
+      success: true,
+      message: "New Employee Created Successfully",
+      data,
+    };
   } catch (error) {
-    throw new Error("Failed to add employee");
+    return { success: false, message: "Failed to create new Employee" };
   }
 };
 
@@ -72,9 +79,13 @@ export const updateEmployee = async (employee: Employee, id: string) => {
     const { data } = await axiosClient.patch(`/employees/${id}`, employee);
     revalidatePath("/employees");
 
-    return data;
+    return {
+      success: true,
+      message: "Employee info Updated Successfully",
+      data,
+    };
   } catch (error) {
-    throw new Error("Failed to update user");
+    return { success: false, message: "Failed to Update Employee Info" };
   }
 };
 
@@ -84,9 +95,13 @@ export const deleteEmployee = async (id: string) => {
     const { data } = await axiosClient.delete(`/employees/${id}`);
     revalidatePath("/employees");
 
-    return data;
+    return {
+      success: true,
+      message: "Employee Data Deleted Successfully",
+      data,
+    };
   } catch (error) {
-    throw new Error("Failed to delete user");
+    return { success: false, message: "Failed to delete Employee Data" };
   }
 };
 
@@ -99,7 +114,11 @@ export const clockIn = async (employeeId: string) => {
       `/timeStamps?employeeId=${employeeId}&status=active`,
     );
     if (existing.data.length > 0) {
-      return existing.data[0];
+      return {
+        success: true,
+        message: "User Already Clocked in ",
+        data: existing.data[0],
+      };
     }
 
     const { data } = await axiosClient.post(`/timeStamps`, {
@@ -111,9 +130,9 @@ export const clockIn = async (employeeId: string) => {
     });
 
     revalidatePath("/employees");
-    return data;
+    return { success: true, message: "Shift Started Successfully", data };
   } catch (error) {
-    throw new Error(" Failed to clock in");
+    return { success: false, message: "Failed to start Shift" };
   }
 };
 
@@ -130,9 +149,9 @@ export const clockOut = async (id: string, clockIn: string) => {
 
     revalidatePath("/employees");
 
-    return data;
+    return { success: true, message: "Shift ended successfully", data };
   } catch (error) {
-    throw new Error("Failed to create clockOut");
+    return { success: false, message: "Failed to end shift " };
   }
 };
 

@@ -55,6 +55,14 @@
       "department": "Dev",
       "role": "Serior Dev",
       "identity": "123Bunch"
+    },
+    {
+      "id": "1ca6",
+      "name": "Ervin Howell",
+      "email": "bradlychauke@gmail.com",
+      "department": "IT",
+      "role": "Sports Analyst",
+      "identity": "Employee21035"
     }
   ],
   "timeStamps": [
@@ -78,9 +86,9 @@
       "id": "16cb",
       "employeeId": "262a",
       "clockIn": "2026-03-06T05:58:11.089Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-08T16:35:52.553Z",
+      "totalMinutes": 3518,
+      "status": "completed"
     },
     {
       "id": "e548",
@@ -144,6 +152,78 @@
       "clockIn": "2026-03-08T10:43:37.975Z",
       "clockOut": "2026-03-08T15:28:33.353Z",
       "totalMinutes": 285,
+      "status": "completed"
+    },
+    {
+      "id": "1e6f",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T06:33:19.033Z",
+      "clockOut": "2026-03-09T06:33:28.177Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "f632",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T06:49:01.046Z",
+      "clockOut": "2026-03-09T06:49:05.681Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "b42b",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T06:49:10.165Z",
+      "clockOut": "2026-03-09T06:49:12.364Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "e693",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T06:49:13.639Z",
+      "clockOut": "2026-03-09T06:49:14.467Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "7223",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T07:02:01.986Z",
+      "clockOut": "2026-03-09T07:02:13.922Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "a1be",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T07:02:20.122Z",
+      "clockOut": "2026-03-09T07:03:05.511Z",
+      "totalMinutes": 1,
+      "status": "completed"
+    },
+    {
+      "id": "b2e4",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T07:03:20.388Z",
+      "clockOut": "2026-03-09T07:03:43.659Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "a59e",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T07:04:07.391Z",
+      "clockOut": "2026-03-09T07:05:16.832Z",
+      "totalMinutes": 1,
+      "status": "completed"
+    },
+    {
+      "id": "a21a",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T07:05:21.785Z",
+      "clockOut": "2026-03-09T07:52:16.121Z",
+      "totalMinutes": 47,
       "status": "completed"
     }
   ]

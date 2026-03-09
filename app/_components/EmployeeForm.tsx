@@ -14,13 +14,16 @@ import { EmployeeFormProp } from "@/types";
 import { useState } from "react";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
+import Toasts from "./ui/Toasts";
 
-// Fixed: single props object with correct types — no second parameter
 const EmployeeForm = ({
   employee,
   role,
 }: EmployeeFormProp & { role?: string }) => {
   const [isEditing, setIsEditing] = useState(!employee);
+  const [toast, setToast] = useState<{ message: string; type: string } | null>(
+    null,
+  );
 
   const {
     register,
@@ -40,7 +43,6 @@ const EmployeeForm = ({
 
   const router = useRouter();
 
-  // Fixed: fetch active timestamps first, then delete them before removing the employee
   const handleDelete = async () => {
     if (!employee?.id) return;
 
@@ -49,15 +51,28 @@ const EmployeeForm = ({
       await deleteTimeStamp(shift, shift.id);
     }
 
-    await deleteEmployee(employee.id);
+    const result = await deleteEmployee(employee.id);
+    setToast({
+      message: result.message,
+      type: result.success ? "success" : "error",
+    });
+
     router.push("/employees");
   };
 
   const onSubmit = async (data: EmployeeFormData) => {
     if (employee) {
-      await updateEmployee(data, employee.id!);
+      const result = await updateEmployee(data, employee.id!);
+      setToast({
+        message: result.message,
+        type: result.success ? "success" : "error",
+      });
     } else {
-      await addEmployee(data);
+      const result = await addEmployee(data);
+      setToast({
+        message: result.message,
+        type: result.success ? "success" : "error",
+      });
     }
     reset();
     router.push("/employees");
@@ -76,10 +91,7 @@ const EmployeeForm = ({
     return (
       <div className="flex justify-center">
         <div className="w-80 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-          {/* Colored banner */}
           <div className={`h-20 ${colors.bg}`} />
-
-          {/* Avatar pulled up over banner */}
           <div className="px-6 -mt-10 mb-4">
             <div
               className={`w-16 h-16 rounded-2xl ${colors.avatar} flex items-center justify-center text-white text-xl font-bold shadow-sm border-4 border-white`}
@@ -87,16 +99,12 @@ const EmployeeForm = ({
               {initials}
             </div>
           </div>
-
-          {/* Name + role */}
           <div className="px-6 pb-2">
             <h2 className="text-lg font-bold text-gray-900 leading-tight">
               {employee.name}
             </h2>
             <p className="text-sm text-gray-400">{employee.role}</p>
           </div>
-
-          {/* Department badge */}
           <div className="px-6 pb-5">
             <span
               className={`inline-block text-xs font-medium px-2.5 py-0.5 rounded-full ${colors.bg} ${colors.text} border ${colors.border}`}
@@ -104,10 +112,7 @@ const EmployeeForm = ({
               {employee.department}
             </span>
           </div>
-
           <div className="h-px bg-gray-100 mx-6" />
-
-          {/* Info rows */}
           <div className="px-6 py-4 flex flex-col gap-3">
             <div>
               <p className="text-xs text-gray-400 uppercase tracking-wide">
@@ -124,10 +129,7 @@ const EmployeeForm = ({
               </p>
             </div>
           </div>
-
           <div className="h-px bg-gray-100 mx-6" />
-
-          {/* Actions — admin only */}
           <div className="px-6 py-4 flex flex-col gap-2">
             {role === "admin" && (
               <>
@@ -140,7 +142,6 @@ const EmployeeForm = ({
                 >
                   Edit Profile
                 </Button>
-
                 <Button
                   size="sm"
                   variant="outline"
@@ -154,6 +155,13 @@ const EmployeeForm = ({
             )}
           </div>
         </div>
+        {toast && (
+          <Toasts
+            message={toast.message}
+            type={toast.type}
+            onClose={() => setToast(null)}
+          />
+        )}
       </div>
     );
   }
@@ -165,7 +173,6 @@ const EmployeeForm = ({
         onSubmit={handleSubmit(onSubmit)}
         className="w-80 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden"
       >
-        {/* Form header */}
         <div className="px-6 pt-6 pb-4 border-b border-gray-100">
           <p className="text-xs text-gray-400 uppercase tracking-widest">
             {employee ? "Editing profile" : "New employee"}
@@ -174,8 +181,6 @@ const EmployeeForm = ({
             {employee ? employee.name : "Add to roster"}
           </h2>
         </div>
-
-        {/* Fields */}
         <div className="px-6 py-5 flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
@@ -188,7 +193,6 @@ const EmployeeForm = ({
             />
             <p className="text-red-400 text-xs h-3">{errors.name?.message}</p>
           </div>
-
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Email
@@ -200,7 +204,6 @@ const EmployeeForm = ({
             />
             <p className="text-red-400 text-xs h-3">{errors.email?.message}</p>
           </div>
-
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Department
@@ -214,7 +217,6 @@ const EmployeeForm = ({
               {errors.department?.message}
             </p>
           </div>
-
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Role
@@ -226,7 +228,6 @@ const EmployeeForm = ({
             />
             <p className="text-red-400 text-xs h-3">{errors.role?.message}</p>
           </div>
-
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Employee ID
@@ -241,8 +242,6 @@ const EmployeeForm = ({
             </p>
           </div>
         </div>
-
-        {/* Buttons */}
         <div className="px-6 pb-6 flex flex-col gap-2 border-t border-gray-100 pt-4">
           <Button
             type="submit"
@@ -250,7 +249,6 @@ const EmployeeForm = ({
           >
             {employee ? "Save Changes" : "Add Employee"}
           </Button>
-
           {employee && (
             <Button
               size="sm"
@@ -264,6 +262,13 @@ const EmployeeForm = ({
           )}
         </div>
       </form>
+      {toast && (
+        <Toasts
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   );
 };
