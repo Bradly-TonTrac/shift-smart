@@ -3,6 +3,16 @@ import Link from "next/link";
 import { getEmployees, shiftStatus } from "@/lib/actions/employeesActions";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+} from "@/components/ui/table";
 
 const employeesPage = async ({
   searchParams,
@@ -28,27 +38,27 @@ const employeesPage = async ({
           <p>No Employees available at the moment</p>
         ) : (
           <div className="mt-8 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-100 bg-gray-50">
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+            <Table className="w-full text-sm">
+              <TableHeader>
+                <TableRow className="border-b border-gray-100 bg-gray-50">
+                  <TableHead className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     Employee
-                  </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                  </TableHead>
+                  <TableHead className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     Department
-                  </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                  </TableHead>
+                  <TableHead className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     Role
-                  </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                  </TableHead>
+                  <TableHead className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     ID
-                  </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                  </TableHead>
+                  <TableHead className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="divide-y divide-gray-50">
                 {employees.map((emp) => {
                   const colors = getColors(emp.department);
                   const initials = emp.name
@@ -61,11 +71,11 @@ const employeesPage = async ({
                   );
 
                   return (
-                    <tr
+                    <TableRow
                       key={emp.id}
                       className="hover:bg-gray-50 transition-colors"
                     >
-                      <td className="px-6 py-4">
+                      <TableCell className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           <div
                             className={`w-8 h-8 rounded-xl ${colors.avatar} flex items-center justify-center text-white text-xs font-bold shrink-0`}
@@ -84,21 +94,21 @@ const employeesPage = async ({
                             <p className="text-xs text-gray-400">{emp.email}</p>
                           </div>
                         </div>
-                      </td>
-                      <td className="px-6 py-4">
+                      </TableCell>
+                      <TableCell className="px-6 py-4">
                         <span
                           className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${colors.bg} ${colors.text} border ${colors.border}`}
                         >
                           {emp.department}
                         </span>
-                      </td>
-                      <td className="px-6 py-4 text-xs text-gray-500">
+                      </TableCell>
+                      <TableCell className="px-6 py-4 text-xs text-gray-500">
                         {emp.role}
-                      </td>
-                      <td className="px-6 py-4 text-xs font-mono text-gray-400">
+                      </TableCell>
+                      <TableCell className="px-6 py-4 text-xs font-mono text-gray-400">
                         {emp.identity}
-                      </td>
-                      <td className="px-6 py-4">
+                      </TableCell>
+                      <TableCell className="px-6 py-4">
                         <span
                           className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full ${isOnShift ? "bg-green-50 text-green-600 border border-green-200" : "bg-gray-50 text-gray-400 border border-gray-200"}`}
                         >
@@ -107,12 +117,12 @@ const employeesPage = async ({
                           />
                           {isOnShift ? "On Shift" : "Off Shift"}
                         </span>
-                      </td>
-                    </tr>
+                      </TableCell>
+                    </TableRow>
                   );
                 })}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
         )}
       </div>

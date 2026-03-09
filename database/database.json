@@ -82,11 +82,11 @@
     },
     {
       "id": "767c",
-      "name": "Bradly Langutani Chauke",
-      "email": "bradlychauke@gmail.com",
+      "name": "Languli Chauke",
+      "email": "languli@gmail.com",
       "department": "Dev",
       "role": "Junior",
-      "identity": "bradly@Test"
+      "identity": "languli@Test"
     }
   ],
   "timeStamps": [
@@ -398,6 +398,86 @@
       "id": "25f4",
       "employeeId": "18b8",
       "clockIn": "2026-03-09T09:07:28.112Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "8d51",
+      "employeeId": "1b41",
+      "clockIn": "2026-03-09T09:17:27.278Z",
+      "clockOut": "2026-03-09T09:17:30.357Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "2529",
+      "employeeId": "1b41",
+      "clockIn": "2026-03-09T09:17:32.293Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "bf0d",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:18:37.991Z",
+      "clockOut": "2026-03-09T09:22:43.539Z",
+      "totalMinutes": 4,
+      "status": "completed"
+    },
+    {
+      "id": "a8a7",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:30.715Z",
+      "clockOut": "2026-03-09T09:23:32.396Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "40e4",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:33.694Z",
+      "clockOut": "2026-03-09T09:23:33.874Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "1ec5",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:34.134Z",
+      "clockOut": "2026-03-09T09:23:34.315Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "5ac8",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:34.585Z",
+      "clockOut": "2026-03-09T09:23:34.888Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "8715",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:35.163Z",
+      "clockOut": "2026-03-09T09:23:35.740Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "c4c0",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:35.971Z",
+      "clockOut": "2026-03-09T09:23:36.546Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "5a08",
+      "employeeId": "767c",
+      "clockIn": "2026-03-09T09:23:37.566Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
