@@ -1,6 +1,6 @@
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
-import { getEmployees } from "@/lib/actions/employeesActions";
+import { getEmployees, shiftStatus } from "@/lib/actions/employeesActions";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
 
@@ -10,6 +10,7 @@ const employeesPage = async ({
   searchParams: { query?: string };
 }) => {
   const employees = await getEmployees();
+  const statuses = await shiftStatus();
 
   return (
     <div>
@@ -17,12 +18,10 @@ const employeesPage = async ({
         <Button
           size="sm"
           variant="outline"
-          className="w-fit text-gray-500 text-sm flex  items-center mt-4 hover:text-gray-600 hover:cursor-pointer"
+          className="w-fit text-gray-500 text-sm flex items-center mt-4 hover:text-gray-600 hover:cursor-pointer"
         >
           <IoIosArrowRoundBack />
-          <Link href={"/dashboard"} className="">
-            Dashboard
-          </Link>
+          <Link href={"/dashboard"}>Dashboard</Link>
         </Button>
 
         {employees.length === 0 ? (
@@ -44,7 +43,9 @@ const employeesPage = async ({
                   <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
                     ID
                   </th>
-                  <th className="px-6 py-3" />
+                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                    Status
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
@@ -55,6 +56,9 @@ const employeesPage = async ({
                     .map((n) => n[0])
                     .join("")
                     .toUpperCase();
+                  const isOnShift = statuses.some(
+                    (s: { employeeId: string }) => s.employeeId === emp.id,
+                  );
 
                   return (
                     <tr
@@ -71,13 +75,12 @@ const employeesPage = async ({
                           <div>
                             <Link
                               href={`/employees/${emp.id}`}
-                              className="text-xs font-semibold text-cyan-500  transition-colors "
+                              className="text-xs font-semibold text-cyan-500 transition-colors"
                             >
                               <p className="font-semibold text-gray-900 hover:text-blue-600">
                                 {emp.name}
                               </p>
                             </Link>
-
                             <p className="text-xs text-gray-400">{emp.email}</p>
                           </div>
                         </div>
@@ -94,6 +97,16 @@ const employeesPage = async ({
                       </td>
                       <td className="px-6 py-4 text-xs font-mono text-gray-400">
                         {emp.identity}
+                      </td>
+                      <td className="px-6 py-4">
+                        <span
+                          className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full ${isOnShift ? "bg-green-50 text-green-600 border border-green-200" : "bg-gray-50 text-gray-400 border border-gray-200"}`}
+                        >
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${isOnShift ? "bg-green-500 animate-ping" : "bg-gray-300"}`}
+                          />
+                          {isOnShift ? "On Shift" : "Off Shift"}
+                        </span>
                       </td>
                     </tr>
                   );

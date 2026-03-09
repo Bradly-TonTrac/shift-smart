@@ -8,6 +8,7 @@ import {
 } from "@/lib/actions/employeesActions";
 import { TimeStamp } from "@/types";
 import Toasts from "./ui/Toasts";
+import { Button } from "@/components/ui/button";
 const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
   const [shiftState, setShiftState] = useState<"off" | "on">("off");
   const [shiftRecord, setShiftRecord] = useState<{
@@ -107,10 +108,12 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
           </span>
         </div>
       )}
-      <button
+      <Button
         onClick={handleShift}
         disabled={isLoading}
-        className={`w-full py-2 rounded-md text-xs font-medium transition-colors duration-150 disabled:opacity-40 disabled:cursor-not-allowed
+        size="sm"
+        variant="outline"
+        className={`w-full hover:cursor-pointer py-2 rounded-md text-xs font-medium transition-colors duration-150 disabled:opacity-40 disabled:cursor-not-allowed
           ${
             isOn
               ? "bg-red-50 text-red-600 border border-red-200 hover:bg-red-100"
@@ -118,7 +121,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
           }`}
       >
         {isLoading ? "Loading..." : isOn ? "End Shift" : "Start Shift"}
-      </button>
+      </Button>
 
       {toast && (
         <Toasts

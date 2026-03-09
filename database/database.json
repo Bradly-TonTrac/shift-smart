@@ -3,7 +3,7 @@
     {
       "id": "c715",
       "name": "Liam Carter",
-      "email": "liam.carter@TT.org",
+      "email": "liam.carter@TT.or",
       "department": "Department",
       "role": "Finance",
       "identity": "Employee21035"
@@ -45,7 +45,7 @@
       "name": "Paul Mabandla",
       "email": "paul@gov.com",
       "department": "Untouchable",
-      "role": "SA Lover",
+      "role": "Senior Citizen's",
       "identity": "pauls123"
     },
     {
@@ -57,12 +57,36 @@
       "identity": "123Bunch"
     },
     {
-      "id": "1ca6",
-      "name": "Ervin Howell",
+      "id": "240c",
+      "name": "Mandlanga SIR",
+      "email": "madlanga@gmail.com",
+      "department": "Commisioner",
+      "role": "Judge",
+      "identity": "madlanga123"
+    },
+    {
+      "id": "c1ce",
+      "name": "Cyril Ramaphosa",
+      "email": "cyril@gmail.gov.co",
+      "department": "President",
+      "role": "Senior Citizen's",
+      "identity": "cyrils1023"
+    },
+    {
+      "id": "1b41",
+      "name": "Benny Mayengani",
+      "email": "benny@gmail.com",
+      "department": "Arts and Culture",
+      "role": "Celebrity",
+      "identity": "benny2011"
+    },
+    {
+      "id": "767c",
+      "name": "Bradly Langutani Chauke",
       "email": "bradlychauke@gmail.com",
-      "department": "IT",
-      "role": "Sports Analyst",
-      "identity": "Employee21035"
+      "department": "Dev",
+      "role": "Junior",
+      "identity": "bradly@Test"
     }
   ],
   "timeStamps": [
@@ -110,9 +134,9 @@
       "id": "9976",
       "employeeId": "18b8",
       "clockIn": "2026-03-06T05:58:13.734Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T09:01:08.173Z",
+      "totalMinutes": 4503,
+      "status": "completed"
     },
     {
       "id": "babb",
@@ -225,6 +249,158 @@
       "clockOut": "2026-03-09T07:52:16.121Z",
       "totalMinutes": 47,
       "status": "completed"
+    },
+    {
+      "id": "852f",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:08:35.125Z",
+      "clockOut": "2026-03-09T08:19:35.133Z",
+      "totalMinutes": 11,
+      "status": "completed"
+    },
+    {
+      "id": "b692",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:20:55.327Z",
+      "clockOut": "2026-03-09T08:21:00.453Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "b3fc",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:21:03.606Z",
+      "clockOut": "2026-03-09T08:23:09.891Z",
+      "totalMinutes": 2,
+      "status": "completed"
+    },
+    {
+      "id": "1ecf",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:23:14.060Z",
+      "clockOut": "2026-03-09T08:24:08.266Z",
+      "totalMinutes": 1,
+      "status": "completed"
+    },
+    {
+      "id": "8f63",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:26:29.633Z",
+      "clockOut": "2026-03-09T08:28:32.423Z",
+      "totalMinutes": 2,
+      "status": "completed"
+    },
+    {
+      "id": "5490",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:28:35.315Z",
+      "clockOut": "2026-03-09T08:30:17.716Z",
+      "totalMinutes": 2,
+      "status": "completed"
+    },
+    {
+      "id": "dca3",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T08:30:38.191Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "4114",
+      "employeeId": "c715",
+      "clockIn": "2026-03-09T08:35:09.211Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "fdaf",
+      "employeeId": "262a",
+      "clockIn": "2026-03-09T08:36:26.287Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "d7cc",
+      "employeeId": "c1ce",
+      "clockIn": "2026-03-09T08:38:25.066Z",
+      "clockOut": "2026-03-09T08:40:03.549Z",
+      "totalMinutes": 2,
+      "status": "completed"
+    },
+    {
+      "id": "3cf3",
+      "employeeId": "c1ce",
+      "clockIn": "2026-03-09T08:40:05.065Z",
+      "clockOut": "2026-03-09T08:49:04.262Z",
+      "totalMinutes": 9,
+      "status": "completed"
+    },
+    {
+      "id": "dcef",
+      "employeeId": "c1ce",
+      "clockIn": "2026-03-09T08:49:28.920Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "b1ca",
+      "employeeId": "1b41",
+      "clockIn": "2026-03-09T09:00:31.027Z",
+      "clockOut": "2026-03-09T09:09:07.317Z",
+      "totalMinutes": 9,
+      "status": "completed"
+    },
+    {
+      "id": "9fa0",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:01:23.904Z",
+      "clockOut": "2026-03-09T09:01:25.727Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "5123",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:01:31.919Z",
+      "clockOut": "2026-03-09T09:04:14.639Z",
+      "totalMinutes": 3,
+      "status": "completed"
+    },
+    {
+      "id": "cac8",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:04:16.073Z",
+      "clockOut": "2026-03-09T09:04:28.216Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "eaf2",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:04:49.699Z",
+      "clockOut": "2026-03-09T09:04:50.152Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "8b8e",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:04:54.435Z",
+      "clockOut": "2026-03-09T09:07:25.689Z",
+      "totalMinutes": 3,
+      "status": "completed"
+    },
+    {
+      "id": "25f4",
+      "employeeId": "18b8",
+      "clockIn": "2026-03-09T09:07:28.112Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
     }
   ]
 }
