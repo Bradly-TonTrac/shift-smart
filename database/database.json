@@ -42,8 +42,8 @@
     },
     {
       "id": "ff37",
-      "name": "Paul Mabandla",
-      "email": "paul@gov.com",
+      "name": "Pat Mabandla",
+      "email": "pat@gov.com",
       "department": "Untouchable",
       "role": "Senior Citizen's",
       "identity": "pauls123"
@@ -302,17 +302,17 @@
       "id": "dca3",
       "employeeId": "240c",
       "clockIn": "2026-03-09T08:30:38.191Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T13:06:56.674Z",
+      "totalMinutes": 276,
+      "status": "completed"
     },
     {
       "id": "4114",
       "employeeId": "c715",
       "clockIn": "2026-03-09T08:35:09.211Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T12:21:17.412Z",
+      "totalMinutes": 226,
+      "status": "completed"
     },
     {
       "id": "fdaf",
@@ -342,9 +342,9 @@
       "id": "dcef",
       "employeeId": "c1ce",
       "clockIn": "2026-03-09T08:49:28.920Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T13:06:16.634Z",
+      "totalMinutes": 257,
+      "status": "completed"
     },
     {
       "id": "b1ca",
@@ -414,9 +414,9 @@
       "id": "2529",
       "employeeId": "1b41",
       "clockIn": "2026-03-09T09:17:32.293Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T13:05:23.992Z",
+      "totalMinutes": 228,
+      "status": "completed"
     },
     {
       "id": "bf0d",
@@ -478,9 +478,68 @@
       "id": "5a08",
       "employeeId": "767c",
       "clockIn": "2026-03-09T09:23:37.566Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-09T13:04:56.829Z",
+      "totalMinutes": 221,
+      "status": "completed"
+    },
+    {
+      "id": "aa70",
+      "employeeId": "c715",
+      "clockIn": "2026-03-09T12:21:21.892Z",
+      "clockOut": "2026-03-09T12:34:33.663Z",
+      "totalMinutes": 13,
+      "status": "completed"
+    },
+    {
+      "id": "086d",
+      "employeeId": "c715",
+      "clockIn": "2026-03-09T13:00:05.673Z",
+      "clockOut": "2026-03-09T13:14:18.815Z",
+      "totalMinutes": 14,
+      "status": "completed"
+    },
+    {
+      "id": "7ef5",
+      "employeeId": "240c",
+      "clockIn": "2026-03-09T13:11:28.418Z",
+      "clockOut": "2026-03-09T13:11:30.440Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "334a",
+      "title": "dfefdewfwef",
+      "notes": "cce",
+      "priority": "medium",
+      "status": "completed",
+      "assignedTo": "1b41",
+      "assignedBy": "1b41",
+      "shiftDate": "2026-03-09",
+      "createdAt": "2026-03-09T13:05:30.902Z"
+    },
+    {
+      "id": "9a78",
+      "title": "vwfrf",
+      "notes": "rgrgf3gf5g54",
+      "priority": "medium",
+      "status": "completed",
+      "assignedTo": "240c",
+      "assignedBy": "240c",
+      "shiftDate": "2026-03-09",
+      "createdAt": "2026-03-09T13:10:37.480Z"
+    },
+    {
+      "id": "21e2",
+      "title": "--=\\-=",
+      "notes": "",
+      "priority": "medium",
+      "status": "pending",
+      "assignedTo": "c715",
+      "assignedBy": "c715",
+      "shiftDate": "2026-03-09",
+      "createdAt": "2026-03-09T13:18:31.460Z"
     }
   ]
 }

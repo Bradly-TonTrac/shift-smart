@@ -19,3 +19,20 @@ export interface TimeStamp {
   totalMinutes: string;
   status: string;
 }
+
+export interface Task {
+  id?: string;
+  title: string;
+  notes: string;
+  priority: "high" | "medium" | "low";
+  status: "pending" | "inprogress" | "completed";
+  assignedTo: string;
+  assignedBy: string;
+  shiftDate: string;
+  createdAt?: string;
+}
+
+export interface ShiftWithTasks extends TimeStamp {
+  tasks: Task[];
+  reviewed?: boolean;
+}

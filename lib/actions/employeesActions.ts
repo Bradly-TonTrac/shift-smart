@@ -184,3 +184,27 @@ export const shiftStatus = async () => {
   const { data } = await axiosClient.get(`/timeStamps?status=active`);
   return data;
 };
+
+//***************Shifts Manipulation*************/
+//get all shifts
+export const getAllShifts = async (employeeId: string) => {
+  try {
+    const { data } = await axiosClient.get(
+      `/timeStamps?employeeId=${employeeId}&status=completed`,
+    );
+    return data;
+  } catch {
+    throw new Error("Failed to fetch shift history");
+  }
+};
+
+//delete shifts
+export const deleteShift = async (id: string) => {
+  try {
+    await axiosClient.delete(`/timeStamps/${id}`);
+    revalidatePath("/employees");
+    return { success: true, message: "Shift record deleted" };
+  } catch {
+    return { success: false, message: "Failed to delete shift record" };
+  }
+};
