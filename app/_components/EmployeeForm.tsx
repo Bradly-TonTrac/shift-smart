@@ -15,6 +15,7 @@ import { useState } from "react";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
 import Toasts from "./ui/Toasts";
+import Link from "next/link";
 
 const EmployeeForm = ({
   employee,
@@ -133,6 +134,19 @@ const EmployeeForm = ({
           <div className="px-6 py-4 flex flex-col gap-2">
             {role === "admin" && (
               <>
+                <Link
+                  href={`/employees/${employee.id}/shifts`}
+                  className="w-full"
+                >
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    type="button"
+                    className="w-full py-2 rounded-lg bg-cyan-400 text-white text-xs font-semibold tracking-wide hover:bg-cyan-500 transition-colors"
+                  >
+                    View Shift History
+                  </Button>
+                </Link>
                 <Button
                   size="sm"
                   variant="outline"

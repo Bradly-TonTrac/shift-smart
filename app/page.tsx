@@ -39,38 +39,38 @@ export default async function Home() {
 
       {/* Feature cards */}
       <div className="max-w-5xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-3 gap-5">
-        <div className="bg-white border border-gray-100 rounded-xl p-6">
+        <div className="bg-gray-200 border border-gray-100 rounded-xl p-6">
           <p className="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-2">
             Shift Tracking
           </p>
           <h3 className="text-sm font-bold text-gray-900 mb-2">
             Clock in and out in one tap
           </h3>
-          <p className="text-xs text-gray-400 leading-relaxed">
+          <p className="text-xs text-gray-500 leading-relaxed">
             No paperwork, no confusion. Every employee clocks in through their
             own profile and their time is logged instantly.
           </p>
         </div>
-        <div className="bg-white border border-gray-100 rounded-xl p-6">
+        <div className="bg-gray-200 border border-gray-100 rounded-xl p-6">
           <p className="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-2">
             Weekly Hours
           </p>
           <h3 className="text-sm font-bold text-gray-900 mb-2">
             Know exactly who worked what
           </h3>
-          <p className="text-xs text-gray-400 leading-relaxed">
+          <p className="text-xs text-gray-500 leading-relaxed">
             Employees see their own hours. Admins see everyone's. Weekly
             summaries make payroll and planning a lot easier.
           </p>
         </div>
-        <div className="bg-white border border-gray-100 rounded-xl p-6">
+        <div className="bg-gray-200 border border-gray-100 rounded-xl p-6">
           <p className="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-2">
             Team Management
           </p>
-          <h3 className="text-sm font-bold text-gray-900 mb-2">
+          <h3 className="text-sm  font-bold text-gray-900 mb-2">
             Built for the person running things
           </h3>
-          <p className="text-xs text-gray-400 leading-relaxed">
+          <p className="text-xs text-gray-500 leading-relaxed">
             Add new staff, update roles, remove people who've left. The admin
             has full control without needing a developer.
           </p>
@@ -78,7 +78,7 @@ export default async function Home() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-gray-100 py-8 text-center">
+      <div className="border-t bg-gray-100 border-gray-100 py-8 text-center">
         <p className="text-xs text-gray-400">
           © 2026 SHIFT-SMART — built for teams that show up.
         </p>

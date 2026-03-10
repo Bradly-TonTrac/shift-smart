@@ -7,19 +7,28 @@ import {
   Table,
   TableHeader,
   TableBody,
-  TableFooter,
   TableHead,
   TableRow,
   TableCell,
-  TableCaption,
 } from "@/components/ui/table";
+import SearchBar from "../_components/SearchBar";
+import { PiEmptyThin } from "react-icons/pi";
 
 const employeesPage = async ({
   searchParams,
 }: {
-  searchParams: { query?: string };
+  searchParams: Promise<{ query?: string }>;
 }) => {
   const employees = await getEmployees();
+
+  const { query } = await searchParams;
+
+  const filtered = query
+    ? employees.filter((emp) =>
+        emp.name.toLowerCase().includes(query.toLowerCase()),
+      )
+    : employees;
+
   const statuses = await shiftStatus();
 
   return (
@@ -33,9 +42,17 @@ const employeesPage = async ({
           <IoIosArrowRoundBack />
           <Link href={"/dashboard"}>Dashboard</Link>
         </Button>
+        <div className="flex justify-center ">
+          <SearchBar />
+        </div>
 
-        {employees.length === 0 ? (
-          <p>No Employees available at the moment</p>
+        {filtered.length === 0 ? (
+          <div className="flex justify-center gap-3 border mt-2 p-2 rounded">
+            <div className=" font-bold  flex items-center">
+              <p>No employees found matching your search</p>
+              <PiEmptyThin className="text-red-500" />
+            </div>
+          </div>
         ) : (
           <div className="mt-8 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
             <Table className="w-full text-sm">
@@ -59,7 +76,7 @@ const employeesPage = async ({
                 </TableRow>
               </TableHeader>
               <TableBody className="divide-y divide-gray-50">
-                {employees.map((emp) => {
+                {filtered.map((emp) => {
                   const colors = getColors(emp.department);
                   const initials = emp.name
                     .split(" ")
