@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getEmployees, shiftStatus } from "@/lib/actions/employeesActions";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
+import Pagination from "../_components/Pagination";
 import {
   Table,
   TableHeader,
@@ -17,11 +18,11 @@ import { PiEmptyThin } from "react-icons/pi";
 const employeesPage = async ({
   searchParams,
 }: {
-  searchParams: Promise<{ query?: string }>;
+  searchParams: Promise<{ query?: string; page?: string }>;
 }) => {
   const employees = await getEmployees();
 
-  const { query } = await searchParams;
+  const { query, page } = await searchParams;
 
   const filtered = query
     ? employees.filter((emp) =>
@@ -30,6 +31,14 @@ const employeesPage = async ({
     : employees;
 
   const statuses = await shiftStatus();
+
+  const currentPage = Number(page) || 1;
+  const perPage = 10;
+  const totalPage = Math.ceil(filtered.length / perPage);
+  const paginated = filtered.slice(
+    (currentPage - 1) * perPage,
+    currentPage * perPage,
+  );
 
   return (
     <div>
@@ -76,7 +85,7 @@ const employeesPage = async ({
                 </TableRow>
               </TableHeader>
               <TableBody className="divide-y divide-gray-50">
-                {filtered.map((emp) => {
+                {paginated.map((emp) => {
                   const colors = getColors(emp.department);
                   const initials = emp.name
                     .split(" ")
@@ -142,6 +151,9 @@ const employeesPage = async ({
             </Table>
           </div>
         )}
+      </div>
+      <div className="flex justify-center">
+        <Pagination currentPage={currentPage} totalPage={totalPage} />
       </div>
     </div>
   );

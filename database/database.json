@@ -79,33 +79,9 @@
       "department": "Arts and Culture",
       "role": "Celebrity",
       "identity": "benny2011"
-    },
-    {
-      "id": "767c",
-      "name": "Languli Chauke",
-      "email": "languli@gmail.com",
-      "department": "Dev",
-      "role": "Junior",
-      "identity": "languli@Test"
-    },
-    {
-      "id": "fc22",
-      "name": "Langutani B Chauke",
-      "email": "langutani@gmail.com",
-      "department": "Dev",
-      "role": "Junior",
-      "identity": "langu@Chauke"
     }
   ],
   "timeStamps": [
-    {
-      "id": "16cb",
-      "employeeId": "262a",
-      "clockIn": "2026-03-06T05:58:11.089Z",
-      "clockOut": "2026-03-08T16:35:52.553Z",
-      "totalMinutes": 3518,
-      "status": "completed"
-    },
     {
       "id": "e548",
       "employeeId": "297c",
@@ -235,14 +211,6 @@
       "status": "completed"
     },
     {
-      "id": "b1ca",
-      "employeeId": "1b41",
-      "clockIn": "2026-03-09T09:00:31.027Z",
-      "clockOut": "2026-03-09T09:09:07.317Z",
-      "totalMinutes": 9,
-      "status": "completed"
-    },
-    {
       "id": "9fa0",
       "employeeId": "18b8",
       "clockIn": "2026-03-09T09:01:23.904Z",
@@ -291,22 +259,6 @@
       "status": "active"
     },
     {
-      "id": "8d51",
-      "employeeId": "1b41",
-      "clockIn": "2026-03-09T09:17:27.278Z",
-      "clockOut": "2026-03-09T09:17:30.357Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "2529",
-      "employeeId": "1b41",
-      "clockIn": "2026-03-09T09:17:32.293Z",
-      "clockOut": "2026-03-09T13:05:23.992Z",
-      "totalMinutes": 228,
-      "status": "completed"
-    },
-    {
       "id": "42ea",
       "employeeId": "c715",
       "clockIn": "2026-03-09T13:31:54.155Z",
@@ -347,50 +299,23 @@
       "status": "active"
     },
     {
-      "id": "819c",
-      "employeeId": "767c",
-      "clockIn": "2026-03-09T17:49:44.967Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "bced",
-      "employeeId": "fc22",
-      "clockIn": "2026-03-10T04:36:20.860Z",
-      "clockOut": "2026-03-10T04:37:31.552Z",
-      "totalMinutes": 1,
-      "status": "completed"
-    },
-    {
-      "id": "4e0f",
-      "employeeId": "fc22",
-      "clockIn": "2026-03-10T04:37:33.242Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
       "id": "62bb",
       "employeeId": "c715",
       "clockIn": "2026-03-10T06:36:08.706Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
+    },
+    {
+      "id": "a20d",
+      "employeeId": "262a",
+      "clockIn": "2026-03-10T09:55:29.793Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
     }
   ],
   "tasks": [
-    {
-      "id": "334a",
-      "title": "dfefdewfwef",
-      "notes": "cce",
-      "priority": "medium",
-      "status": "completed",
-      "assignedTo": "1b41",
-      "assignedBy": "1b41",
-      "shiftDate": "2026-03-09",
-      "createdAt": "2026-03-09T13:05:30.902Z"
-    },
     {
       "id": "9a78",
       "title": "vwfrf",

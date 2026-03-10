@@ -6,12 +6,12 @@ const SearchBar = () => {
 
   const search = (e: any) => {
     const searchValue = e.target.value;
-    router.push(`/employees?query=${searchValue }`);
+    router.push(`/employees?query=${searchValue}`);
   };
 
   return (
     <div>
-      <label className="input w-150 bg-gray-300 border border-gray-400">
+      <label className="input w-150 bg-gray-100 shadow">
         <svg
           className="h-[1em] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
