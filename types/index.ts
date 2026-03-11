@@ -36,3 +36,8 @@ export interface ShiftWithTasks extends TimeStamp {
   tasks: Task[];
   reviewed?: boolean;
 }
+
+export interface EmployeeProfilePageProps {
+  params: Promise<{ id: string }>;
+  backHref?: string;
+}
