@@ -1,6 +1,7 @@
 import LoginBtn from "./_components/LoginBtn";
 import { getSessionAction } from "@/lib/actions/sessionActions";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 export default async function Home() {
   const { role, employeeId } = await getSessionAction();
@@ -15,10 +16,12 @@ export default async function Home() {
     <main className="min-h-screen">
       {/* Hero */}
       <div className="relative w-full h-[80vh]">
-        <img
+        <Image
           src="/BG-img.jpg"
           alt="HR-Pro"
-          className="w-full h-full rounded hover:translate-y-1  object-cover"
+          fill
+          className="rounded object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center mt-30 justify-center gap-4 px-4 text-center">
