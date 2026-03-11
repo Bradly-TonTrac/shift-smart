@@ -58,7 +58,7 @@
     },
     {
       "id": "240c",
-      "name": "Mandlanga SIR",
+      "name": "Madlanga SIR",
       "email": "madlanga@gmail.com",
       "department": "Commisioner",
       "role": "Judge",
@@ -79,6 +79,86 @@
       "department": "Arts and Culture",
       "role": "Celebrity",
       "identity": "benny2011"
+    },
+    {
+      "id": "ecf2",
+      "name": "James Anderson",
+      "email": "james@gmail.com",
+      "department": "Engineering",
+      "role": "employee",
+      "identity": "EMP001"
+    },
+    {
+      "id": "69c3",
+      "name": "Sarah Mitchell",
+      "email": "sarah@gmail.com",
+      "department": "Marketing",
+      "role": "employee",
+      "identity": "EMP002"
+    },
+    {
+      "id": "b944",
+      "name": "Emily Clarke",
+      "email": "emilly.clarke@gmail.com",
+      "department": " HR",
+      "role": " employee",
+      "identity": "EMP004"
+    },
+    {
+      "id": "5ab0",
+      "name": "Michael Brown ",
+      "email": "michael@gmail.com",
+      "department": "Engineering ",
+      "role": "employee",
+      "identity": "EMP005"
+    },
+    {
+      "id": "fee1",
+      "name": "Jessica Taylor",
+      "email": "jessica@gmail.com",
+      "department": "Sales ",
+      "role": " employee",
+      "identity": "EMP006"
+    },
+    {
+      "id": "2453",
+      "name": "Daniel Wilson",
+      "email": "daniel@gmail.com",
+      "department": "IT ",
+      "role": "employee",
+      "identity": "EMP007"
+    },
+    {
+      "id": "432f",
+      "name": "Laura Martinez ",
+      "email": "laura@gmail.com",
+      "department": "Marketing ",
+      "role": "employee ",
+      "identity": "EMP008"
+    },
+    {
+      "id": "638b",
+      "name": "Christopher Lee",
+      "email": "chris@gmail.com",
+      "department": "Finance ",
+      "role": "employee",
+      "identity": "EMP009"
+    },
+    {
+      "id": "4265",
+      "name": "Amanda White",
+      "email": "amanda@gmail.com",
+      "department": "HR ",
+      "role": "employee ",
+      "identity": "EMP010"
+    },
+    {
+      "id": "b111",
+      "name": "Ryan Harris ",
+      "email": "ryan@gmail.com",
+      "department": "Engineering",
+      "role": "employee",
+      "identity": "EMP011"
     }
   ],
   "timeStamps": [
@@ -313,6 +393,94 @@
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
+    },
+    {
+      "id": "1459",
+      "employeeId": "297c",
+      "clockIn": "2026-03-11T04:37:27.939Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "34fc",
+      "employeeId": "ecf2",
+      "clockIn": "2026-03-11T06:46:34.864Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "ed30",
+      "employeeId": "69c3",
+      "clockIn": "2026-03-11T06:47:36.220Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "ec8b",
+      "employeeId": "b944",
+      "clockIn": "2026-03-11T06:48:13.159Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "19dc",
+      "employeeId": "5ab0",
+      "clockIn": "2026-03-11T06:48:46.626Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "225b",
+      "employeeId": "fee1",
+      "clockIn": "2026-03-11T06:49:12.541Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "a8f6",
+      "employeeId": "2453",
+      "clockIn": "2026-03-11T06:56:44.989Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "d4f3",
+      "employeeId": "432f",
+      "clockIn": "2026-03-11T06:57:51.005Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "1645",
+      "employeeId": "638b",
+      "clockIn": "2026-03-11T06:58:16.827Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "6e3f",
+      "employeeId": "4265",
+      "clockIn": "2026-03-11T06:58:58.465Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "9935",
+      "employeeId": "b111",
+      "clockIn": "2026-03-11T07:00:05.489Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
     }
   ],
   "tasks": [
@@ -458,6 +626,39 @@
       "assignedBy": "262a",
       "shiftDate": "2026-03-10",
       "createdAt": "2026-03-10T06:37:37.571Z"
+    },
+    {
+      "id": "8674",
+      "title": "Dos and Donts",
+      "notes": "Dont Switch Off Yet",
+      "priority": "high",
+      "status": "pending",
+      "assignedTo": "297c",
+      "assignedBy": "297c",
+      "shiftDate": "2026-03-11",
+      "createdAt": "2026-03-11T04:38:10.843Z"
+    },
+    {
+      "id": "f343",
+      "title": "scxacx",
+      "notes": "scScS",
+      "priority": "medium",
+      "status": "pending",
+      "assignedTo": "fee1",
+      "assignedBy": "fee1",
+      "shiftDate": "2026-03-11",
+      "createdAt": "2026-03-11T06:49:19.954Z"
+    },
+    {
+      "id": "583b",
+      "title": "Clean the code",
+      "notes": "Go file by File and reclean all the code and add comments.",
+      "priority": "high",
+      "status": "pending",
+      "assignedTo": "2453",
+      "assignedBy": "2453",
+      "shiftDate": "2026-03-11",
+      "createdAt": "2026-03-11T06:57:17.760Z"
     }
   ]
 }

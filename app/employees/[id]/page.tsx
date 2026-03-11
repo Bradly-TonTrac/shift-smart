@@ -6,6 +6,9 @@ import {
 import EmployeeForm from "@/app/_components/EmployeeForm";
 import ProfileTabs from "@/app/_components/ProfileTabs";
 import { getSessionAction } from "@/lib/actions/sessionActions";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -25,6 +28,14 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="px-4">
       <div className="flex flex-col items-center gap-6">
+        <div className="flex items-center">
+          <Button className="w-fit mt-20 bg-gray-100 hover:translate-y hover:bg-gray-100 shadow text-gray-500 text-sm flex items-center  hover:text-gray-600 hover:cursor-pointer">
+            <Link href={"/employees"}>
+              <RiArrowGoBackFill />
+            </Link>
+          </Button>
+        </div>
+
         <div className="mt-20 flex justify-between gap-3 w-full max-w-2xl">
           <div className="shrink-0">
             <EmployeeForm employee={employed} role={role} />
