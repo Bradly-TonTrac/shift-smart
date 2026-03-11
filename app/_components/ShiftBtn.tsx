@@ -9,6 +9,7 @@ import {
 import { TimeStamp } from "@/types";
 import Toasts from "./ui/Toasts";
 import { Button } from "@/components/ui/button";
+
 const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
   const [shiftState, setShiftState] = useState<"off" | "on">("off");
   const [shiftRecord, setShiftRecord] = useState<{

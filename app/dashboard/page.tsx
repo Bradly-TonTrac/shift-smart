@@ -4,8 +4,7 @@ import { shiftStatus } from "@/lib/actions/employeesActions";
 import { Button } from "@/components/ui/button";
 
 const page = async () => {
-  //await new Promise((resolve) => setTimeout(resolve, 50000));
-
+  //fetching all the employees using server actions
   const employeesExtractions = await getEmployees();
   const statuses = await shiftStatus();
   const status = statuses.length;
