@@ -33,14 +33,6 @@
       "identity": "Employee21038"
     },
     {
-      "id": "18b8",
-      "name": "Bradly Chauke",
-      "email": "bradlychauke@gmail.com",
-      "department": "Engineering",
-      "role": "Junior",
-      "identity": "2003Brad"
-    },
-    {
       "id": "ff37",
       "name": "Pat Mabandla",
       "email": "pat@gov.com",
@@ -159,87 +151,103 @@
       "department": "Engineering",
       "role": "employee",
       "identity": "EMP011"
+    },
+    {
+      "id": "0403",
+      "name": "Jordan Blake",
+      "email": "jordan.blake@TT.org",
+      "department": "Engineering",
+      "role": "Senior Developer",
+      "identity": "EMP101"
+    },
+    {
+      "id": "45f9",
+      "name": "Priya Naidoo",
+      "email": "priya.naidoo@TT.org",
+      "department": "HR",
+      "role": "HR Manager",
+      "identity": "EMP102"
+    },
+    {
+      "id": "a6bc",
+      "name": "Marcus Williams",
+      "email": "marcus.williams@TT.org",
+      "department": "Finance",
+      "role": "Accountant",
+      "identity": "EMP103"
+    },
+    {
+      "id": "58e2",
+      "name": "Zoe Hendricks",
+      "email": "zoe.hendricks@TT.org",
+      "department": "Marketing",
+      "role": "Content Strategist",
+      "identity": "EMP104"
+    },
+    {
+      "id": "c2f1",
+      "name": "Sipho Dlamini",
+      "email": "sipho.dlamini@TT.org",
+      "department": "IT-Support",
+      "role": "Systems Administrator",
+      "identity": "EMP105"
+    },
+    {
+      "id": "970a",
+      "name": "Fatima Moosa",
+      "email": "fatima.moosa@TT.org",
+      "department": "Sales",
+      "role": "Sales Manager",
+      "identity": "EMP106"
+    },
+    {
+      "id": "931d",
+      "name": "Ethan Carr",
+      "email": "ethan.carr@TT.org",
+      "department": "Engineering",
+      "role": "DevOps Engineer",
+      "identity": "EMP107"
+    },
+    {
+      "id": "5572",
+      "name": "Lerato Khumalo",
+      "email": "lerato.khumalo@TT.org",
+      "department": "Operations",
+      "role": "Operations Lead",
+      "identity": "EMP108"
+    },
+    {
+      "id": "2878",
+      "name": "Nina Patel",
+      "email": "nina.patel@TT.org",
+      "department": "Design",
+      "role": "UI/UX Designer",
+      "identity": "EMP109"
+    },
+    {
+      "id": "6cae",
+      "name": "Carlos Mendes",
+      "email": "carlos.mendes@TT.org",
+      "department": "Finance",
+      "role": "Financial Analyst",
+      "identity": "EMP110"
     }
   ],
   "timeStamps": [
     {
-      "id": "e548",
-      "employeeId": "297c",
-      "clockIn": "2026-03-06T05:58:12.021Z",
-      "clockOut": "2026-03-10T06:59:29.699Z",
-      "totalMinutes": 5821,
-      "status": "completed"
-    },
-    {
-      "id": "dfc9",
-      "employeeId": "81da",
-      "clockIn": "2026-03-06T05:58:12.655Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "9976",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-06T05:58:13.734Z",
-      "clockOut": "2026-03-09T09:01:08.173Z",
-      "totalMinutes": 4503,
-      "status": "completed"
-    },
-    {
       "id": "babb",
       "employeeId": "ff37",
       "clockIn": "2026-03-06T05:58:14.547Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T11:18:07.541Z",
+      "totalMinutes": 7520,
+      "status": "completed"
     },
     {
       "id": "5e5a",
       "employeeId": "dc0d",
       "clockIn": "2026-03-06T06:13:09.068Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "1e6f",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T06:33:19.033Z",
-      "clockOut": "2026-03-09T06:33:28.177Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "f632",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T06:49:01.046Z",
-      "clockOut": "2026-03-09T06:49:05.681Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "b42b",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T06:49:10.165Z",
-      "clockOut": "2026-03-09T06:49:12.364Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "e693",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T06:49:13.639Z",
-      "clockOut": "2026-03-09T06:49:14.467Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "7223",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T07:02:01.986Z",
-      "clockOut": "2026-03-09T07:02:13.922Z",
-      "totalMinutes": 0,
+      "clockOut": "2026-03-11T11:18:28.399Z",
+      "totalMinutes": 7505,
       "status": "completed"
     },
     {
@@ -248,14 +256,6 @@
       "clockIn": "2026-03-09T07:02:20.122Z",
       "clockOut": "2026-03-09T07:03:05.511Z",
       "totalMinutes": 1,
-      "status": "completed"
-    },
-    {
-      "id": "b2e4",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T07:03:20.388Z",
-      "clockOut": "2026-03-09T07:03:43.659Z",
-      "totalMinutes": 0,
       "status": "completed"
     },
     {
@@ -291,62 +291,6 @@
       "status": "completed"
     },
     {
-      "id": "9fa0",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:01:23.904Z",
-      "clockOut": "2026-03-09T09:01:25.727Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "5123",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:01:31.919Z",
-      "clockOut": "2026-03-09T09:04:14.639Z",
-      "totalMinutes": 3,
-      "status": "completed"
-    },
-    {
-      "id": "cac8",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:04:16.073Z",
-      "clockOut": "2026-03-09T09:04:28.216Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "eaf2",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:04:49.699Z",
-      "clockOut": "2026-03-09T09:04:50.152Z",
-      "totalMinutes": 0,
-      "status": "completed"
-    },
-    {
-      "id": "8b8e",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:04:54.435Z",
-      "clockOut": "2026-03-09T09:07:25.689Z",
-      "totalMinutes": 3,
-      "status": "completed"
-    },
-    {
-      "id": "25f4",
-      "employeeId": "18b8",
-      "clockIn": "2026-03-09T09:07:28.112Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "42ea",
-      "employeeId": "c715",
-      "clockIn": "2026-03-09T13:31:54.155Z",
-      "clockOut": "2026-03-10T04:35:08.010Z",
-      "totalMinutes": 903,
-      "status": "completed"
-    },
-    {
       "id": "630f",
       "employeeId": "240c",
       "clockIn": "2026-03-09T17:42:46.606Z",
@@ -358,49 +302,33 @@
       "id": "c438",
       "employeeId": "240c",
       "clockIn": "2026-03-09T17:44:44.596Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T11:18:49.661Z",
+      "totalMinutes": 2494,
+      "status": "completed"
     },
     {
       "id": "c2b5",
       "employeeId": "c1ce",
       "clockIn": "2026-03-09T17:48:22.648Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T11:19:06.597Z",
+      "totalMinutes": 2491,
+      "status": "completed"
     },
     {
       "id": "6145",
       "employeeId": "1b41",
       "clockIn": "2026-03-09T17:48:45.484Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "62bb",
-      "employeeId": "c715",
-      "clockIn": "2026-03-10T06:36:08.706Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T11:19:36.955Z",
+      "totalMinutes": 2491,
+      "status": "completed"
     },
     {
       "id": "a20d",
       "employeeId": "262a",
       "clockIn": "2026-03-10T09:55:29.793Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "1459",
-      "employeeId": "297c",
-      "clockIn": "2026-03-11T04:37:27.939Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T11:15:06.483Z",
+      "totalMinutes": 1520,
+      "status": "completed"
     },
     {
       "id": "34fc",
@@ -478,9 +406,41 @@
       "id": "9935",
       "employeeId": "b111",
       "clockIn": "2026-03-11T07:00:05.489Z",
+      "clockOut": "2026-03-11T09:28:06.527Z",
+      "totalMinutes": 148,
+      "status": "completed"
+    },
+    {
+      "id": "27c8",
+      "employeeId": "b111",
+      "clockIn": "2026-03-11T09:28:57.562Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
+    },
+    {
+      "id": "25da",
+      "employeeId": "0403",
+      "clockIn": "2026-03-11T11:07:56.748Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "6440",
+      "employeeId": "dc0d",
+      "clockIn": "2026-03-11T11:18:31.111Z",
+      "clockOut": "2026-03-11T11:18:31.945Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "af9c",
+      "employeeId": "1b41",
+      "clockIn": "2026-03-11T11:19:42.208Z",
+      "clockOut": "2026-03-11T11:20:08.618Z",
+      "totalMinutes": 0,
+      "status": "completed"
     }
   ],
   "tasks": [
@@ -540,28 +500,6 @@
       "createdAt": "2026-03-10T04:31:56.958Z"
     },
     {
-      "id": "5462",
-      "title": "Clock Out",
-      "notes": "",
-      "priority": "high",
-      "status": "pending",
-      "assignedTo": "c715",
-      "assignedBy": "admin",
-      "shiftDate": "2026-03-10",
-      "createdAt": "2026-03-10T04:33:00.828Z"
-    },
-    {
-      "id": "5ee7",
-      "title": "Clock Out",
-      "notes": "",
-      "priority": "high",
-      "status": "completed",
-      "assignedTo": "262a",
-      "assignedBy": "admin",
-      "shiftDate": "2026-03-10",
-      "createdAt": "2026-03-10T04:33:19.114Z"
-    },
-    {
       "id": "d9fe",
       "title": "Clock Out",
       "notes": "",
@@ -577,7 +515,7 @@
       "title": "Clock Out",
       "notes": "",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "assignedTo": "18b8",
       "assignedBy": "admin",
       "shiftDate": "2026-03-10",
@@ -588,7 +526,7 @@
       "title": "Clock Out",
       "notes": "",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "assignedTo": "18b8",
       "assignedBy": "admin",
       "shiftDate": "2026-03-10",
@@ -617,22 +555,11 @@
       "createdAt": "2026-03-10T04:37:48.436Z"
     },
     {
-      "id": "6bb7",
-      "title": "com",
-      "notes": "Task completed",
-      "priority": "medium",
-      "status": "pending",
-      "assignedTo": "262a",
-      "assignedBy": "262a",
-      "shiftDate": "2026-03-10",
-      "createdAt": "2026-03-10T06:37:37.571Z"
-    },
-    {
       "id": "8674",
       "title": "Dos and Donts",
       "notes": "Dont Switch Off Yet",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "assignedTo": "297c",
       "assignedBy": "297c",
       "shiftDate": "2026-03-11",
@@ -659,6 +586,17 @@
       "assignedBy": "2453",
       "shiftDate": "2026-03-11",
       "createdAt": "2026-03-11T06:57:17.760Z"
+    },
+    {
+      "id": "dcf6",
+      "title": "Done",
+      "notes": "Done a Major Fix and Major Code Cleaning.",
+      "priority": "high",
+      "status": "completed",
+      "assignedTo": "b111",
+      "assignedBy": "b111",
+      "shiftDate": "2026-03-11",
+      "createdAt": "2026-03-11T09:28:42.774Z"
     }
   ]
 }

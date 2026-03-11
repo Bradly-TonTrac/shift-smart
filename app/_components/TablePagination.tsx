@@ -16,6 +16,7 @@ const TablePagination = ({
     <div>
       <Pagination>
         <PaginationContent>
+          {/* Generate a pagination link for each page number */}
           {Array.from({ length: totalPage }, (_, i) => i + 1).map((pageNum) => (
             <PaginationItem key={pageNum}>
               <PaginationLink

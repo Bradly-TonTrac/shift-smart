@@ -14,6 +14,7 @@ const ShiftHistoryPage = async ({
   const { id } = await params;
   const { role } = await getSessionAction();
 
+  // Protect this page — only admins can view shift history
   if (role !== "admin") redirect("/");
 
   const employee = await getEmployee(id);
@@ -40,6 +41,7 @@ const ShiftHistoryPage = async ({
           </p>
         </div>
 
+        {/* Renders the full shift history UI — see _components/ShiftHistoryClient.tsx */}
         <ShiftHistoryClient employeeId={id} employeeName={employee.name} />
       </div>
     </div>

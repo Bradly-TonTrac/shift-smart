@@ -35,6 +35,7 @@ const fmt = {
   },
 };
 
+// Generates and downloads a CSV file of all shift records for the employee
 const exportCSV = (shifts: ShiftWithTasks[], name: string) => {
   const header = [
     "Date",
@@ -85,6 +86,7 @@ export default function ShiftHistoryClient({
   }, [employeeId]);
 
   const load = useCallback(async () => {
+    // Fetches all completed shifts and enriches each with its tasks for that date
     setLoading(true);
     try {
       const raw: TimeStamp[] = await getAllShifts(employeeId);
@@ -110,6 +112,7 @@ export default function ShiftHistoryClient({
     load();
   }, [load]);
 
+  // Deletes a single shift record and removes it from local state
   const handleDelete = async (id: string) => {
     const res = await deleteShift(id);
     setToast({ message: res.message, type: res.success ? "success" : "error" });
@@ -119,6 +122,7 @@ export default function ShiftHistoryClient({
     }
   };
 
+  // Deletes all shift records for this employee one by one
   const handleClearAll = async () => {
     setClearing(true);
     let ok = true;
@@ -141,6 +145,7 @@ export default function ShiftHistoryClient({
     setClearing(false);
   };
 
+  // Toggles the reviewed state for a shift and persists it to localStorage
   const toggleReviewed = (id: string) => {
     setReviewed((prev) => {
       const next = new Set(prev);
@@ -150,7 +155,7 @@ export default function ShiftHistoryClient({
     });
   };
 
-  // stats
+  // Calculate summary stats for the stats cards at the top
   const totalMins = shifts.reduce(
     (a, s) => a + (Number(s.totalMinutes) || 0),
     0,

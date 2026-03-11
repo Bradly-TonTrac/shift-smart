@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 
+// Auto-resets the error boundary after 3 seconds
 const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {

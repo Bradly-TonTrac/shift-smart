@@ -3,6 +3,7 @@ import axiosClient from "../api/axiosClient";
 import { revalidatePath } from "next/cache";
 import { Task } from "@/types";
 
+// Fetches all tasks across all employees — used by admin only
 export const getTasks = async (): Promise<Task[]> => {
   try {
     const { data } = await axiosClient.get("/tasks");
@@ -12,6 +13,7 @@ export const getTasks = async (): Promise<Task[]> => {
   }
 };
 
+// Fetches tasks assigned to a specific employee
 export const getTasksByEmployee = async (
   employeeId: string,
 ): Promise<Task[]> => {
@@ -23,6 +25,7 @@ export const getTasksByEmployee = async (
   }
 };
 
+// Creates a new task and attaches a createdAt timestamp
 export const addTask = async (task: Omit<Task, "id">) => {
   try {
     const { data } = await axiosClient.post("/tasks", {
@@ -37,6 +40,7 @@ export const addTask = async (task: Omit<Task, "id">) => {
   }
 };
 
+// Partially updates a task by id — used for status, priority and notes changes
 export const updateTask = async (id: string, updates: Partial<Task>) => {
   try {
     const { data } = await axiosClient.patch(`/tasks/${id}`, updates);
@@ -48,6 +52,7 @@ export const updateTask = async (id: string, updates: Partial<Task>) => {
   }
 };
 
+// Deletes a task by id
 export const deleteTask = async (id: string) => {
   try {
     const { data } = await axiosClient.delete(`/tasks/${id}`);
@@ -58,6 +63,7 @@ export const deleteTask = async (id: string) => {
   }
 };
 
+// Fetches tasks for a specific employee on a specific shift date
 export const getTasksByDate = async (
   employeeId: string,
   date: string,

@@ -142,7 +142,7 @@ const EmployeeForm = ({
                     size="sm"
                     variant="outline"
                     type="button"
-                    className="w-full py-2 rounded-lg bg-cyan-400 text-white text-xs font-semibold tracking-wide hover:bg-cyan-500 transition-colors"
+                    className="w-full py-2  hover:cursor-pointer  rounded-lg bg-cyan-400 text-white text-xs font-semibold tracking-wide hover:bg-cyan-500 transition-colors"
                   >
                     View Shift History
                   </Button>
@@ -152,7 +152,7 @@ const EmployeeForm = ({
                   variant="outline"
                   type="button"
                   onClick={() => setIsEditing(true)}
-                  className="w-full py-2 rounded-lg bg-gray-900 text-white text-xs font-semibold tracking-wide hover:bg-gray-700 transition-colors"
+                  className="w-full   hover:cursor-pointer py-2 rounded-lg bg-gray-900 text-white text-xs font-semibold tracking-wide hover:bg-gray-700 transition-colors"
                 >
                   Edit Profile
                 </Button>
@@ -161,7 +161,7 @@ const EmployeeForm = ({
                   variant="outline"
                   type="button"
                   onClick={handleDelete}
-                  className="w-full py-2 rounded-lg border border-red-200 text-red-500 text-xs font-semibold hover:bg-red-50 transition-colors"
+                  className="w-full py-2 rounded-lg border   hover:cursor-pointer border-red-200 text-red-500 text-xs font-semibold hover:bg-red-50 transition-colors"
                 >
                   Delete Employee
                 </Button>

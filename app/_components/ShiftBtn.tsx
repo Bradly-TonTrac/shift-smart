@@ -22,6 +22,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
     null,
   );
 
+  // On mount, check if the employee already has an active shift and restore state
   useEffect(() => {
     const fetchShiftStatus = async () => {
       const data = await getShiftStatus(employeeId);
@@ -43,12 +44,14 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
     fetchShiftStatus();
   }, [employeeId]);
 
+  // Tick the elapsed timer every second while shift is active
   useEffect(() => {
     if (shiftState !== "on") return;
     const interval = setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => clearInterval(interval);
   }, [shiftState]);
 
+  // Handles both clock in and clock out depending on current shift state
   const handleShift = async () => {
     if (shiftState === "off") {
       // duplicate guard
@@ -88,6 +91,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
 
   const isOn = shiftState === "on";
 
+  // Formats elapsed seconds into HH:MM:SS display format
   const formatTime = (seconds: number) => {
     const h = Math.floor(seconds / 3600)
       .toString()

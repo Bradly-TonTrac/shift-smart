@@ -4,6 +4,8 @@ import { redirect } from "next/navigation";
 
 const New = async () => {
   const { role } = await getSessionAction();
+
+  // Protect this page — only admins can add new employees
   if (role !== "admin") redirect("/");
 
   return (

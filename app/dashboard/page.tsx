@@ -10,6 +10,8 @@ const page = async () => {
   const status = statuses.length;
 
   const totalEmployees = employeesExtractions.length;
+
+  // Calculate on shift and off shift counts from active timestamps
   const offShift = totalEmployees - status;
 
   return (
@@ -43,9 +45,7 @@ const page = async () => {
             </span>
           </div>
 
-          {/* Off 
-          
-           */}
+          {/* Off Shift */}
           <div className="flex flex-col gap-1 bg-white rounded-2xl shadow-sm border border-gray-100 px-8 py-6 items-center hover:shadow-md transition-all duration-200">
             <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
               Off Shift

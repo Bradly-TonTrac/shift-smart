@@ -12,7 +12,9 @@ import {
 import { Task } from "@/types";
 import Toasts from "./ui/Toasts";
 import { Button } from "@/components/ui/button";
+import { TasksTabProps } from "@/types";
 
+// Style metadata for each priority level — used to render badges and dots
 const PRIORITY_META = {
   high: {
     label: "High",
@@ -31,6 +33,7 @@ const PRIORITY_META = {
   },
 };
 
+// Style metadata for each status level — used to render status badges
 const STATUS_META = {
   pending: {
     label: "Pending",
@@ -49,16 +52,12 @@ const STATUS_META = {
   },
 };
 
+// Defines the cycle order when clicking the status button on a task
 const STATUS_CYCLE: Task["status"][] = ["pending", "inprogress", "completed"];
 
 const today = () => new Date().toISOString().split("T")[0];
 
-interface TasksTabProps {
-  employeeId: string;
-  role?: string;
-  sessionId?: string;
-  employees?: { id: string; name: string }[];
-}
+
 
 const TasksTab = ({
   employeeId,
@@ -115,18 +114,21 @@ const TasksTab = ({
     load();
   }, [employeeId, isAdmin]);
 
+  // Filter tasks by active status and priority filters
   const filtered = tasks.filter((t) => {
     const s = statusFilter === "all" || t.status === statusFilter;
     const p = priorityFilter === "all" || t.priority === priorityFilter;
     return s && p;
   });
 
+  // Count tasks per status for the filter pill badges
   const counts = {
     pending: tasks.filter((t) => t.status === "pending").length,
     inprogress: tasks.filter((t) => t.status === "inprogress").length,
     completed: tasks.filter((t) => t.status === "completed").length,
   };
 
+  // Cycles task status in order: pending → inprogress → completed
   const handleAdd = () => {
     if (!form.title.trim()) return;
     startTransition(async () => {
@@ -143,6 +145,7 @@ const TasksTab = ({
     });
   };
 
+  // Saves the edited note for a task
   const handleCycleStatus = (task: Task) => {
     const next =
       STATUS_CYCLE[
@@ -157,6 +160,7 @@ const TasksTab = ({
     });
   };
 
+  // Saves the edited note for a task
   const handleSaveNote = (task: Task) => {
     startTransition(async () => {
       const result = await updateTask(task.id!, { notes: noteValue });
@@ -169,6 +173,7 @@ const TasksTab = ({
     });
   };
 
+  // Updates the priority of a task
   const handleChangePriority = (task: Task, priority: Task["priority"]) => {
     startTransition(async () => {
       const result = await updateTask(task.id!, { priority });
