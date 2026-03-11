@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const SearchBar = () => {
   const router = useRouter();
 
-  const search = (e: any) => {
+  const search = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
     router.push(`/employees?query=${searchValue}`);
   };

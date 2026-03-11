@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,  useRef } from "react";
 import { useRouter } from "next/navigation";
 import { getEmployeeByIdentity } from "@/lib/actions/employeesActions";
 import { setSessionAction } from "@/lib/actions/sessionActions";
@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 const LoginBtn = () => {
   const [userInput, setUserInput] = useState("");
   const [error, setError] = useState("");
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
 
   const handleLogin = async () => {
@@ -30,11 +31,7 @@ const LoginBtn = () => {
   return (
     <div>
       <Button
-        onClick={() =>
-          (
-            document.getElementById("my_modal_3") as HTMLDialogElement
-          ).showModal()
-        }
+        onClick={() => dialogRef.current?.showModal()}
         size="sm"
         variant="outline"
         className="hover:cursor-pointer"
@@ -42,7 +39,7 @@ const LoginBtn = () => {
         Start Your Shift
       </Button>
 
-      <dialog id="my_modal_3" className="modal">
+      <dialog ref={dialogRef} className="modal">
         <div className="modal-box bg-gray-100 rounded shadow-lg p-6 w-80">
           <form method="dialog">
             <Button

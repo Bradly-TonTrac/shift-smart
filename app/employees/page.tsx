@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getEmployees, shiftStatus } from "@/lib/actions/employeesActions";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
-import Pagination from "../_components/Pagination";
+import TablePagination from "../_components/TablePagination";
 import {
   Table,
   TableHeader,
@@ -153,7 +153,7 @@ const employeesPage = async ({
         )}
       </div>
       <div className="flex justify-center">
-        <Pagination currentPage={currentPage} totalPage={totalPage} />
+        <TablePagination currentPage={currentPage} totalPage={totalPage} />
       </div>
     </div>
   );
