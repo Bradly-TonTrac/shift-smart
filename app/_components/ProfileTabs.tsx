@@ -2,23 +2,7 @@
 import { useState, useEffect } from "react";
 import TasksTab from "./TaskTab";
 import ShiftBtn from "./ShiftBtn";
-
-interface Shift {
-  id: string;
-  clockIn: string;
-  clockOut: string;
-  totalMinutes: number;
-}
-
-interface ProfileTabsProps {
-  employeeId: string;
-  role?: string;
-  sessionId?: string;
-  employees: { id: string; name: string }[];
-  shifts: Shift[];
-  totalMinutes: number;
-  isOwnProfile: boolean;
-}
+import { ProfileTabsProps } from "@/types";
 
 const fmt = {
   date: (s: string) => {

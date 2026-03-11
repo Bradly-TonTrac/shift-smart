@@ -6,14 +6,9 @@ import { Task, TimeStamp, ShiftWithTasks } from "@/types";
 import { getTasksByDate } from "@/lib/actions/taskAction";
 import Toasts from "./ui/Toasts";
 import { Button } from "@/components/ui/button";
+import { ShiftHistoryClientProps } from "@/types";
 
-
-interface Props {
-  employeeId: string;
-  employeeName: string;
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// *************** Helpers ***************
 const fmt = {
   date: (s: string) => {
     if (!s) return "";
@@ -66,11 +61,11 @@ const exportCSV = (shifts: ShiftWithTasks[], name: string) => {
   a.click();
 };
 
-// ── Component ────────────────────────────────────────────────────────────────
+//   ********* Component  *********
 export default function ShiftHistoryClient({
   employeeId,
   employeeName,
-}: Props) {
+}: ShiftHistoryClientProps) {
   const [mounted, setMounted] = useState(false);
   const [shifts, setShifts] = useState<ShiftWithTasks[]>([]);
   const [loading, setLoading] = useState(true);

@@ -41,3 +41,25 @@ export interface EmployeeProfilePageProps {
   params: Promise<{ id: string }>;
   backHref?: string;
 }
+
+export interface Shift {
+  id: string;
+  clockIn: string;
+  clockOut: string;
+  totalMinutes: number;
+}
+
+export interface ProfileTabsProps {
+  employeeId: string;
+  role?: string;
+  sessionId?: string;
+  employees: { id: string; name: string }[];
+  shifts: Shift[];
+  totalMinutes: number;
+  isOwnProfile: boolean;
+}
+
+export interface ShiftHistoryClientProps {
+  employeeId: string;
+  employeeName: string;
+}
