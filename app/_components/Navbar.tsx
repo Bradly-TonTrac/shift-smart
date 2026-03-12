@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { IoPersonCircleSharp } from "react-icons/io5";
-
 import { getSessionAction } from "@/lib/actions/sessionActions";
 import { getEmployee } from "@/lib/actions/employeesActions";
 import LogoutBtn from "./LogoutBtn";
 import { Button } from "@/components/ui/button";
+
 const Navbar = async () => {
   const { role, employeeId } = await getSessionAction();
 
+  // Fetch employee name to display in the navbar if logged in as employee
   let employeeName = "";
   if (role === "employee" && employeeId) {
     const employee = await getEmployee(employeeId);
@@ -25,6 +26,7 @@ const Navbar = async () => {
         </Link>
 
         <div className="flex items-center gap-3">
+          {/* Show Add Employee button for admin, name display for employee */}
           {role === "admin" && (
             <Link href="/employees/new">
               <Button

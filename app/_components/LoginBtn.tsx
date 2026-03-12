@@ -12,6 +12,8 @@ const LoginBtn = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
 
+
+  // Authenticates user by identity — routes admin to dashboard, employee to their profile
   const handleLogin = async () => {
     setError("");
     if (userInput === "123Test") {

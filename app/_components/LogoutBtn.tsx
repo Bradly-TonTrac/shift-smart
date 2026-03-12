@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 const LogoutBtn = () => {
   const router = useRouter();
 
+  // Clears the session cookie and redirects to the landing page
   const handleLogout = async () => {
     await clearSessionAction();
     router.push("/");

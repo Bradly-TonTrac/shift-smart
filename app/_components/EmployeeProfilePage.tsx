@@ -21,12 +21,14 @@ const EmployeeProfilePage = async ({
   const shifts = await getWeeklyHours(id);
   const allEmployees = role === "admin" ? await getEmployees() : [];
 
+  // Sum up total minutes worked this week across all shifts
   const totalMinutes = shifts.reduce(
     (acc: number, ts: { totalMinutes: number }) =>
       acc + (Number(ts.totalMinutes) || 0),
     0,
   );
 
+  // True if the logged in employee is viewing their own profile
   const isOwnProfile = role === "employee" && sessionId === id;
 
   return (
@@ -43,11 +45,14 @@ const EmployeeProfilePage = async ({
           </Button>
         )}
 
-        <div className="mt-2 flex justify-between gap-3 w-full max-w-2xl">
+        <div className="mt-5 flex justify-between gap-3 w-full max-w-2xl">
           <div className="shrink-0">
+            {/* EmployeeForm handles view/edit mode — see _components/EmployeeForm.tsx */}
             <EmployeeForm employee={employed} role={role} />
           </div>
+
           <div className="flex-1 min-w-0">
+            {/* ProfileTabs handles shifts and tasks — see _components/ProfileTabs.tsx */}
             <ProfileTabs
               employeeId={id}
               role={role}

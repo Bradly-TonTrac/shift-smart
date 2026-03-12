@@ -350,9 +350,9 @@
       "id": "ec8b",
       "employeeId": "b944",
       "clockIn": "2026-03-11T06:48:13.159Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-12T06:42:47.273Z",
+      "totalMinutes": 1435,
+      "status": "completed"
     },
     {
       "id": "19dc",
@@ -470,9 +470,9 @@
       "id": "927b",
       "employeeId": "69c3",
       "clockIn": "2026-03-12T04:50:16.624Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-12T06:38:10.673Z",
+      "totalMinutes": 108,
+      "status": "completed"
     }
   ],
   "tasks": [
@@ -657,7 +657,7 @@
       "title": "Office Visit",
       "notes": "Hi Sarah, Please Gather your team and meet me in the board room, so that we can discus the new Ideas about the project.",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "assignedTo": "69c3",
       "assignedBy": "admin",
       "shiftDate": "2026-03-12",

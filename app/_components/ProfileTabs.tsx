@@ -4,6 +4,7 @@ import TasksTab from "./TaskTab";
 import ShiftBtn from "./ShiftBtn";
 import { ProfileTabsProps } from "@/types";
 
+// Date and time formatters for shift display — locale set to en-ZA
 const fmt = {
   date: (s: string) => {
     if (!s) return "";
@@ -38,6 +39,7 @@ const ProfileTabs = ({
   const [mounted, setMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"shifts" | "tasks">("shifts");
 
+  // Mount guard — prevents hydration mismatch when rendering date/time values
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -84,6 +86,8 @@ const ProfileTabs = ({
               {Math.floor(totalMinutes / 60)}h {totalMinutes % 60}m total
             </span>
           </div>
+
+          {/* Render each shift row with date, time range and duration */}
           <div className="px-6 py-4 flex flex-col gap-3">
             {shifts.length === 0 ? (
               <p className="text-xs text-gray-400">

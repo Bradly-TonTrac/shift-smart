@@ -1,3 +1,4 @@
+// Color themes for each department — used for badges, avatars and cards
 export const departmentColors: Record<
   string,
   {
@@ -57,6 +58,7 @@ export const departmentColors: Record<
   },
 };
 
+// Default colors used when the department doesn't match any known entry
 export const fallback = {
   card: "border-l-4 border-gray-300",
   badge: "bg-gray-100 text-gray-600",
@@ -67,4 +69,5 @@ export const fallback = {
   border: "border-gray-200",
 };
 
+// Returns the color theme for a department or falls back to the default
 export const getColors = (dept: string) => departmentColors[dept] ?? fallback;
