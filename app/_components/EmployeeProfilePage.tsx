@@ -21,14 +21,14 @@ const EmployeeProfilePage = async ({
   const shifts = await getWeeklyHours(id);
   const allEmployees = role === "admin" ? await getEmployees() : [];
 
-  // Sum up total minutes worked this week across all shifts
+  // Sum up total minutes worked this week across all shifts.
   const totalMinutes = shifts.reduce(
     (acc: number, ts: { totalMinutes: number }) =>
       acc + (Number(ts.totalMinutes) || 0),
     0,
   );
 
-  // True if the logged in employee is viewing their own profile
+  // True if the logged in employee is viewing their own profile.
   const isOwnProfile = role === "employee" && sessionId === id;
 
   return (

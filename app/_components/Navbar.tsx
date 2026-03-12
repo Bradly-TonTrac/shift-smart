@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 const Navbar = async () => {
   const { role, employeeId } = await getSessionAction();
 
-  // Fetch employee name to display in the navbar if logged in as employee
+  // Fetch employee name to display in the navbar if logged in as employee.
   let employeeName = "";
   if (role === "employee" && employeeId) {
     const employee = await getEmployee(employeeId);

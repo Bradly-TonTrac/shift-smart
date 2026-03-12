@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const SearchBar = () => {
   const router = useRouter();
 
-  // Pushes a query param to the URL on every keystroke to filter employees
+  // Pushes a query param to the URL on every keystroke to filter employees.
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
     router.push(`/employees?query=${searchValue}`);

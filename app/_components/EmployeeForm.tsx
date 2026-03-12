@@ -42,7 +42,7 @@ const EmployeeForm = ({
 
   const router = useRouter();
 
-  // Ends any active shift first, then deletes the employee and goes back to the list
+  // Ends any active shift first, then deletes the employee and goes back to the list.
   const handleDelete = async () => {
     if (!employee?.id) return;
 
@@ -60,7 +60,7 @@ const EmployeeForm = ({
     router.push("/employees");
   };
 
-  // Saves the form — updates the employee if editing, creates a new one if adding
+  // Saves the form — updates the employee if editing, creates a new one if adding.
   const onSubmit = async (data: EmployeeFormData) => {
     if (employee) {
       const result = await updateEmployee(data, employee.id!);
@@ -79,7 +79,7 @@ const EmployeeForm = ({
     router.push("/employees");
   };
 
-  // Get the avatar color and initials based on the employee's department and name
+  // Get the avatar color and initials based on the employee's department and name.
   const colors = getColors(employee?.department ?? "");
   const initials =
     employee?.name
@@ -88,7 +88,7 @@ const EmployeeForm = ({
       .join("")
       .toUpperCase() ?? "";
 
-  // FORM MODE — shows the form for adding a new employee or editing an existing one
+  // FORM MODE — shows the form for adding a new employee or editing an existing one.
   if (employee && !isEditing) {
     return (
       <div className="flex justify-center">
@@ -226,6 +226,7 @@ const EmployeeForm = ({
               {errors.department?.message}
             </p>
           </div>
+          
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Role

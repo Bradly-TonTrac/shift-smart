@@ -14,7 +14,7 @@ const LoginBtn = () => {
 
   const { setToast, ToastElement } = useToast();
 
-  // Authenticates user by identity — routes admin to dashboard, employee to their profile
+  // Authenticates user by identity — routes admin to dashboard, employee to their profile.
   const handleLogin = async () => {
     setError("");
     const result = await loginAction(userInput);

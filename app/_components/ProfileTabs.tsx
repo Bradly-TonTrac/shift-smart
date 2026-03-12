@@ -4,7 +4,7 @@ import TasksTab from "./TaskTab";
 import ShiftBtn from "./ShiftBtn";
 import { ProfileTabsProps } from "@/types";
 
-// Date and time formatters for shift display — locale set to en-ZA
+// Date and time formatters for shift display — locale set to en-ZA.
 const fmt = {
   date: (s: string) => {
     if (!s) return "";
@@ -39,7 +39,7 @@ const ProfileTabs = ({
   const [mounted, setMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"shifts" | "tasks">("shifts");
 
-  // Mount guard — prevents hydration mismatch when rendering date/time values
+  // Mount guard — prevents hydration mismatch when rendering date/time values.
   useEffect(() => {
     setMounted(true);
   }, []);

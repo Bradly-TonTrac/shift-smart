@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { TasksTabProps } from "@/types";
 import { useToast } from "@/lib/hooks/useToast";
 
-// Style metadata for each priority level — used to render badges and dots
+// Style metadata for each priority level — used to render badges and dots.
 const PRIORITY_META = {
   high: {
     label: "High",
@@ -33,7 +33,7 @@ const PRIORITY_META = {
   },
 };
 
-// Style metadata for each status level — used to render status badges
+// Style metadata for each status level — used to render status badges.
 const STATUS_META = {
   pending: {
     label: "Pending",
@@ -52,7 +52,7 @@ const STATUS_META = {
   },
 };
 
-// Defines the cycle order when clicking the status button on a task
+// Defines the cycle order when clicking the status button on a task.
 const STATUS_CYCLE: Task["status"][] = ["pending", "inprogress", "completed"];
 
 const today = () => new Date().toISOString().split("T")[0];
@@ -89,18 +89,18 @@ const TasksTab = ({
     shiftDate: today(),
   });
 
-  // Fetch tasks
+  // Fetch tasks.
   useEffect(() => {
     const load = async () => {
       setLoading(true);
       let data: Task[] = [];
 
       if (isAdmin) {
-        // Admin fetches all tasks and filters to this employee
+        // Admin fetches all tasks and filters to this employee.
         const all = await getTasks();
         data = all.filter((t: Task) => t.assignedTo === employeeId);
       } else {
-        // Employee only fetches their own
+        // Employee only fetches their own.
         data = await getTasksByEmployee(employeeId);
       }
 
@@ -110,21 +110,21 @@ const TasksTab = ({
     load();
   }, [employeeId, isAdmin]);
 
-  // Filter tasks by active status and priority filters
+  // Filter tasks by active status and priority filters.
   const filtered = tasks.filter((t) => {
     const s = statusFilter === "all" || t.status === statusFilter;
     const p = priorityFilter === "all" || t.priority === priorityFilter;
     return s && p;
   });
 
-  // Count tasks per status for the filter pill badges
+  // Count tasks per status for the filter pill badges.
   const counts = {
     pending: tasks.filter((t) => t.status === "pending").length,
     inprogress: tasks.filter((t) => t.status === "inprogress").length,
     completed: tasks.filter((t) => t.status === "completed").length,
   };
 
-  // Cycles task status in order: pending → inprogress → completed
+  // Cycles task status in order: pending → inprogress → completed.
   const handleAdd = () => {
     if (!form.title.trim()) return;
     startTransition(async () => {
@@ -141,7 +141,7 @@ const TasksTab = ({
     });
   };
 
-  // Saves the edited note for a task
+  // Saves the edited note for a task.
   const handleCycleStatus = (task: Task) => {
     const next =
       STATUS_CYCLE[
@@ -156,7 +156,7 @@ const TasksTab = ({
     });
   };
 
-  // Saves the edited note for a task
+  // Saves the edited note for a task.
   const handleSaveNote = (task: Task) => {
     startTransition(async () => {
       const result = await updateTask(task.id!, { notes: noteValue });
@@ -169,7 +169,7 @@ const TasksTab = ({
     });
   };
 
-  // Updates the priority of a task
+  // Updates the priority of a task.
   const handleChangePriority = (task: Task, priority: Task["priority"]) => {
     startTransition(async () => {
       const result = await updateTask(task.id!, { priority });
@@ -183,10 +183,12 @@ const TasksTab = ({
   const handleDelete = (id: string) => {
     startTransition(async () => {
       const result = await deleteTask(id);
+
       setToast({
         message: result.message,
         type: result.success ? "success" : "error",
       });
+
       if (result.success) setTasks((prev) => prev.filter((t) => t.id !== id));
     });
   };

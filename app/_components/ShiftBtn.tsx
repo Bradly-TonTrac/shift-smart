@@ -20,7 +20,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
   const [elapsed, setElapsed] = useState(0);
   const { setToast, ToastElement } = useToast();
 
-  // On mount, check if the employee already has an active shift and restore state
+  // On mount, check if the employee already has an active shift and restore state.
   useEffect(() => {
     const fetchShiftStatus = async () => {
       const data = await getShiftStatus(employeeId);
@@ -42,14 +42,14 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
     fetchShiftStatus();
   }, [employeeId]);
 
-  // Tick the elapsed timer every second while shift is active
+  // Tick the elapsed timer every second while shift is active.
   useEffect(() => {
     if (shiftState !== "on") return;
     const interval = setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => clearInterval(interval);
   }, [shiftState]);
 
-  // Handles both clock in and clock out depending on current shift state
+  // Handles both clock in and clock out depending on current shift state.
   const handleShift = async () => {
     if (shiftState === "off") {
       // duplicate guard
@@ -66,7 +66,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
         return;
       }
 
-      //clockIn trigger condition with Toasts attachment
+      //clockIn trigger condition with Toasts attachment.
       const recordIn = await clockIn(employeeId);
       setToast({
         message: recordIn.message,
@@ -89,7 +89,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
 
   const isOn = shiftState === "on";
 
-  // Formats elapsed seconds into HH:MM:SS display format
+  // Formats elapsed seconds into HH:MM:SS display format.
   const formatTime = (seconds: number) => {
     const h = Math.floor(seconds / 3600)
       .toString()
