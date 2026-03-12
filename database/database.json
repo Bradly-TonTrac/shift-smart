@@ -334,17 +334,17 @@
       "id": "34fc",
       "employeeId": "ecf2",
       "clockIn": "2026-03-11T06:46:34.864Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T12:26:55.960Z",
+      "totalMinutes": 340,
+      "status": "completed"
     },
     {
       "id": "ed30",
       "employeeId": "69c3",
       "clockIn": "2026-03-11T06:47:36.220Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-11T12:27:40.668Z",
+      "totalMinutes": 340,
+      "status": "completed"
     },
     {
       "id": "ec8b",
@@ -441,6 +441,38 @@
       "clockOut": "2026-03-11T11:20:08.618Z",
       "totalMinutes": 0,
       "status": "completed"
+    },
+    {
+      "id": "2b86",
+      "employeeId": "6cae",
+      "clockIn": "2026-03-11T12:25:19.838Z",
+      "clockOut": "2026-03-11T13:18:28.817Z",
+      "totalMinutes": 53,
+      "status": "completed"
+    },
+    {
+      "id": "42b0",
+      "employeeId": "69c3",
+      "clockIn": "2026-03-11T12:27:57.116Z",
+      "clockOut": "2026-03-11T12:27:58.242Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "cc7e",
+      "employeeId": "262a",
+      "clockIn": "2026-03-12T04:48:37.787Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "927b",
+      "employeeId": "69c3",
+      "clockIn": "2026-03-12T04:50:16.624Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
     }
   ],
   "tasks": [
@@ -597,6 +629,39 @@
       "assignedBy": "b111",
       "shiftDate": "2026-03-11",
       "createdAt": "2026-03-11T09:28:42.774Z"
+    },
+    {
+      "id": "0626",
+      "title": "Clean",
+      "notes": "Clean the code and prepare for a review.",
+      "priority": "high",
+      "status": "pending",
+      "assignedTo": "262a",
+      "assignedBy": "262a",
+      "shiftDate": "2026-03-12",
+      "createdAt": "2026-03-12T04:49:25.540Z"
+    },
+    {
+      "id": "e39f",
+      "title": "Meeting",
+      "notes": "Check up with the supervision etc.",
+      "priority": "high",
+      "status": "completed",
+      "assignedTo": "69c3",
+      "assignedBy": "69c3",
+      "shiftDate": "2026-03-12",
+      "createdAt": "2026-03-12T04:51:21.646Z"
+    },
+    {
+      "id": "9db5",
+      "title": "Office Visit",
+      "notes": "Hi Sarah, Please Gather your team and meet me in the board room, so that we can discus the new Ideas about the project.",
+      "priority": "high",
+      "status": "pending",
+      "assignedTo": "69c3",
+      "assignedBy": "admin",
+      "shiftDate": "2026-03-12",
+      "createdAt": "2026-03-12T04:53:16.669Z"
     }
   ]
 }
