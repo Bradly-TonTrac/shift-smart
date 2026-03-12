@@ -1,6 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
-
+import { getEmployeeByIdentity } from "./employeesActions";
 // Sets the session cookies for role and employeeId on login
 export const setSessionAction = async (
   role: "admin" | "employee",
@@ -24,4 +24,31 @@ export const clearSessionAction = async () => {
   const cookieStore = await cookies();
   cookieStore.delete("role");
   cookieStore.delete("employeeId");
+};
+
+// Validates the user input against the admin password or employee identity and sets the session
+export const loginAction = async (userInput: string) => {
+  if (userInput === process.env.ADMIN_PASSWORD) {
+    await setSessionAction("admin");
+    return {
+      success: true,
+      role: "admin",
+    };
+  } else {
+    const employee = await getEmployeeByIdentity(userInput);
+
+    if (employee) {
+      await setSessionAction("employee", employee.id);
+      return {
+        success: true,
+        role: "employee",
+        employeeId: employee.id,
+      };
+    } else {
+      return {
+        success: false,
+        role: "Employee ID not Valid",
+      };
+    }
+  }
 };

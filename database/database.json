@@ -231,6 +231,14 @@
       "department": "Finance",
       "role": "Financial Analyst",
       "identity": "EMP110"
+    },
+    {
+      "id": "ea87",
+      "name": "Bradly Langutani Chauke",
+      "email": "bradlychauke@gmail.com",
+      "department": "Engineering",
+      "role": "Junior",
+      "identity": "bradly@Test"
     }
   ],
   "timeStamps": [
@@ -473,6 +481,14 @@
       "clockOut": "2026-03-12T06:38:10.673Z",
       "totalMinutes": 108,
       "status": "completed"
+    },
+    {
+      "id": "4b65",
+      "employeeId": "ea87",
+      "clockIn": "2026-03-12T09:36:40.654Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
     }
   ],
   "tasks": [

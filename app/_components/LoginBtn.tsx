@@ -1,10 +1,9 @@
 "use client";
 
-import { useState,  useRef } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { getEmployeeByIdentity } from "@/lib/actions/employeesActions";
-import { setSessionAction } from "@/lib/actions/sessionActions";
 import { Button } from "@/components/ui/button";
+import { loginAction } from "@/lib/actions/sessionActions";
 
 const LoginBtn = () => {
   const [userInput, setUserInput] = useState("");
@@ -12,21 +11,17 @@ const LoginBtn = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
 
-
   // Authenticates user by identity — routes admin to dashboard, employee to their profile
   const handleLogin = async () => {
     setError("");
-    if (userInput === "123Test") {
-      await setSessionAction("admin");
+    const result = await loginAction(userInput);
+
+    if (result.role === "admin") {
       router.push("/dashboard");
+    } else if (result.role === "employee") {
+      router.push(`/profile/${result.employeeId}`);
     } else {
-      const employee = await getEmployeeByIdentity(userInput);
-      if (employee) {
-        await setSessionAction("employee", employee.id);
-        router.push(`/profile/${employee.id}`);
-      } else {
-        setError("ID not found. Please try again.");
-      }
+      setError("ID not found. Please try again.");
     }
   };
 
