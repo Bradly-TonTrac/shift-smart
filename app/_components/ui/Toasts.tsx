@@ -13,11 +13,11 @@ const Toasts = ({
   type: string;
   onClose: () => void;
 }) => {
-  // Auto-dismisses the toast after 6 seconds
+  // Auto-dismisses the toast after 5 seconds
   useEffect(() => {
-    const timeout = setTimeout(onClose, 6000);
+    const timeout = setTimeout(onClose, 50000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [onClose,]);
 
   return (
     <div className="toast toast-top toast-end mt-20">
