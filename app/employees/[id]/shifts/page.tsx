@@ -14,7 +14,7 @@ const ShiftHistoryPage = async ({
   const { id } = await params;
   const { role } = await getSessionAction();
 
-  // Protect this page — only admins can view shift history
+  // Protect this page — only admins can view shift history.
   if (role !== "admin") redirect("/");
 
   const employee = await getEmployee(id);

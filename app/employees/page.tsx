@@ -24,7 +24,7 @@ const employeesPage = async ({
 
   const { query, page } = await searchParams;
 
-  // Filter employees by name if a search query is present
+  // Filter employees by name if a search query is present.
   const filtered = query
     ? employees.filter((emp) =>
         emp.name.toLowerCase().includes(query.toLowerCase()),
@@ -33,7 +33,7 @@ const employeesPage = async ({
 
   const statuses = await shiftStatus();
 
-  // Calculate pagination slice based on current page
+  // Calculate pagination slice based on current page.
   const currentPage = Number(page) || 1;
   const perPage = 10;
   const totalPage = Math.ceil(filtered.length / perPage);

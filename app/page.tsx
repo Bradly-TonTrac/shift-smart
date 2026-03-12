@@ -6,7 +6,7 @@ import Image from "next/image";
 export default async function Home() {
   const { role, employeeId } = await getSessionAction();
 
-  // Redirect authenticated users based on their role
+  // Redirect authenticated users based on their role.
   if (role === "admin") {
     redirect("/dashboard");
   } else if (role === "employee") {

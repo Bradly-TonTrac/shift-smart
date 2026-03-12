@@ -4,14 +4,14 @@ import { shiftStatus } from "@/lib/actions/employeesActions";
 import { Button } from "@/components/ui/button";
 
 const page = async () => {
-  //fetching all the employees using server actions
+  //fetching all the employees using server actions.
   const employeesExtractions = await getEmployees();
   const statuses = await shiftStatus();
   const status = statuses.length;
 
   const totalEmployees = employeesExtractions.length;
 
-  // Calculate on shift and off shift counts from active timestamps
+  // Calculate on shift and off shift counts from active timestamps.
   const offShift = totalEmployees - status;
 
   return (
