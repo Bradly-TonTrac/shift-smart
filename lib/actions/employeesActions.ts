@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 import axiosClient from "../api/axiosClient";
 import { TimeStamp } from "@/types";
 
-
 //fetching all employees
 export const getEmployees = async (): Promise<Employee[]> => {
   try {
@@ -59,6 +58,26 @@ export const getEmployeeByIdentity = async (
 //create employee
 export const addEmployee = async (employee: Employee) => {
   try {
+    const existingID = await axiosClient.get(
+      `/employees?identity=${employee.identity}`,
+    );
+    if (existingID.data.length > 0) {
+      return {
+        success: false,
+        message: "Employee exist in the system",
+      };
+    }
+
+    const existingMail = await axiosClient.get(
+      `/employees?email=${employee.email}`,
+    );
+    if (existingMail.data.length > 0) {
+      return {
+        success: false,
+        message: "Employee exist in the system",
+      };
+    }
+
     const { data } = await axiosClient.post(`/employees`, employee);
 
     revalidatePath("/employees");
