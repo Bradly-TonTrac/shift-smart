@@ -10,7 +10,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
     }, 3000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [reset]);
 
   return (
     <div className="flex justify-center items-center min-h-screen">
