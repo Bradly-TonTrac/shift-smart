@@ -14,7 +14,7 @@ import { EmployeeFormProp } from "@/types";
 import { useState } from "react";
 import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
-import Toasts from "./ui/Toasts";
+import { useToast } from "@/lib/hooks/useToast";
 import Link from "next/link";
 
 const EmployeeForm = ({
@@ -22,9 +22,7 @@ const EmployeeForm = ({
   role,
 }: EmployeeFormProp & { role?: string }) => {
   const [isEditing, setIsEditing] = useState(!employee);
-  const [toast, setToast] = useState<{ message: string; type: string } | null>(
-    null,
-  );
+  const { setToast, ToastElement } = useToast();
 
   const {
     register,
@@ -172,13 +170,7 @@ const EmployeeForm = ({
             )}
           </div>
         </div>
-        {toast && (
-          <Toasts
-            message={toast.message}
-            type={toast.type}
-            onClose={() => setToast(null)}
-          />
-        )}
+        {ToastElement}
       </div>
     );
   }
@@ -279,13 +271,7 @@ const EmployeeForm = ({
           )}
         </div>
       </form>
-      {toast && (
-        <Toasts
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
-      )}
+      {ToastElement}
     </div>
   );
 };

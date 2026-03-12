@@ -33,6 +33,7 @@ export const loginAction = async (userInput: string) => {
     return {
       success: true,
       role: "admin",
+      message: "Welcome to your Administrator activities",
     };
   } else {
     const employee = await getEmployeeByIdentity(userInput);
@@ -42,12 +43,13 @@ export const loginAction = async (userInput: string) => {
       return {
         success: true,
         role: "employee",
+        message: "Welcome to your shift activities ",
         employeeId: employee.id,
       };
     } else {
       return {
         success: false,
-        role: "Employee ID not Valid",
+        message: "Illegal Login Please Contact Your Administrator",
       };
     }
   }

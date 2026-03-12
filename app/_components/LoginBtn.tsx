@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { loginAction } from "@/lib/actions/sessionActions";
+import { useToast } from "@/lib/hooks/useToast";
 
 const LoginBtn = () => {
   const [userInput, setUserInput] = useState("");
@@ -11,10 +12,17 @@ const LoginBtn = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
 
+  const { setToast, ToastElement } = useToast();
+
   // Authenticates user by identity — routes admin to dashboard, employee to their profile
   const handleLogin = async () => {
     setError("");
     const result = await loginAction(userInput);
+
+    setToast({
+      message: result.message,
+      type: result.success ? "success" : "error",
+    });
 
     if (result.role === "admin") {
       router.push("/dashboard");
@@ -70,6 +78,7 @@ const LoginBtn = () => {
           </div>
         </div>
       </dialog>
+      {ToastElement}
     </div>
   );
 };

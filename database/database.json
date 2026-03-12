@@ -259,30 +259,6 @@
       "status": "completed"
     },
     {
-      "id": "a1be",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T07:02:20.122Z",
-      "clockOut": "2026-03-09T07:03:05.511Z",
-      "totalMinutes": 1,
-      "status": "completed"
-    },
-    {
-      "id": "a59e",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T07:04:07.391Z",
-      "clockOut": "2026-03-09T07:05:16.832Z",
-      "totalMinutes": 1,
-      "status": "completed"
-    },
-    {
-      "id": "a21a",
-      "employeeId": "262a",
-      "clockIn": "2026-03-09T07:05:21.785Z",
-      "clockOut": "2026-03-09T07:52:16.121Z",
-      "totalMinutes": 47,
-      "status": "completed"
-    },
-    {
       "id": "fdaf",
       "employeeId": "262a",
       "clockIn": "2026-03-09T08:36:26.287Z",
@@ -470,9 +446,9 @@
       "id": "cc7e",
       "employeeId": "262a",
       "clockIn": "2026-03-12T04:48:37.787Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-12T09:56:19.671Z",
+      "totalMinutes": 308,
+      "status": "completed"
     },
     {
       "id": "927b",
@@ -486,6 +462,14 @@
       "id": "4b65",
       "employeeId": "ea87",
       "clockIn": "2026-03-12T09:36:40.654Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "fed1",
+      "employeeId": "ecf2",
+      "clockIn": "2026-03-12T09:55:28.024Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
@@ -651,7 +635,7 @@
       "title": "Clean",
       "notes": "Clean the code and prepare for a review.",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "assignedTo": "262a",
       "assignedBy": "262a",
       "shiftDate": "2026-03-12",
@@ -678,6 +662,17 @@
       "assignedBy": "admin",
       "shiftDate": "2026-03-12",
       "createdAt": "2026-03-12T04:53:16.669Z"
+    },
+    {
+      "id": "20a9",
+      "title": "Task",
+      "notes": "Can you kindly, Add new Toasts notifications",
+      "priority": "high",
+      "status": "inprogress",
+      "assignedTo": "ecf2",
+      "assignedBy": "admin",
+      "shiftDate": "2026-03-12",
+      "createdAt": "2026-03-12T09:55:15.060Z"
     }
   ]
 }

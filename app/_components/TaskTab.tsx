@@ -10,9 +10,9 @@ import {
 } from "@/lib/actions/taskAction";
 
 import { Task } from "@/types";
-import Toasts from "./ui/Toasts";
 import { Button } from "@/components/ui/button";
 import { TasksTabProps } from "@/types";
+import { useToast } from "@/lib/hooks/useToast";
 
 // Style metadata for each priority level — used to render badges and dots
 const PRIORITY_META = {
@@ -57,8 +57,6 @@ const STATUS_CYCLE: Task["status"][] = ["pending", "inprogress", "completed"];
 
 const today = () => new Date().toISOString().split("T")[0];
 
-
-
 const TasksTab = ({
   employeeId,
   role,
@@ -70,9 +68,7 @@ const TasksTab = ({
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
   const [isPending, startTransition] = useTransition();
-  const [toast, setToast] = useState<{ message: string; type: string } | null>(
-    null,
-  );
+  const { setToast, ToastElement } = useToast();
   const [statusFilter, setStatusFilter] = useState<"all" | Task["status"]>(
     "all",
   );
@@ -536,13 +532,7 @@ const TasksTab = ({
         )}
       </div>
 
-      {toast && (
-        <Toasts
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
-      )}
+      {ToastElement}
     </div>
   );
 };

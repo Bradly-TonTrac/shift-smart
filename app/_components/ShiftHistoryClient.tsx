@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { getAllShifts, deleteShift } from "@/lib/actions/employeesActions";
 import { Task, TimeStamp, ShiftWithTasks } from "@/types";
 import { getTasksByDate } from "@/lib/actions/taskAction";
-import Toasts from "./ui/Toasts";
+import { useToast } from "@/lib/hooks/useToast";
 import { Button } from "@/components/ui/button";
 import { ShiftHistoryClientProps } from "@/types";
 
@@ -74,9 +74,7 @@ export default function ShiftHistoryClient({
   const [reviewed, setReviewed] = useState<Set<string>>(new Set());
   const [clearing, setClearing] = useState(false);
   const [confirmClear, setConfirmClear] = useState(false);
-  const [toast, setToast] = useState<{ message: string; type: string } | null>(
-    null,
-  );
+  const { setToast, ToastElement } = useToast();
 
   // mount guard — prevents hydration mismatch
   useEffect(() => {
@@ -462,14 +460,7 @@ export default function ShiftHistoryClient({
           })}
         </div>
       )}
-
-      {toast && (
-        <Toasts
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
-      )}
+      {ToastElement}
     </div>
   );
 }

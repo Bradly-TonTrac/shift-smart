@@ -7,7 +7,7 @@ import {
   getShiftStatus,
 } from "@/lib/actions/employeesActions";
 import { TimeStamp } from "@/types";
-import Toasts from "./ui/Toasts";
+import { useToast } from "@/lib/hooks/useToast";
 import { Button } from "@/components/ui/button";
 
 const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
@@ -18,9 +18,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
   } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [elapsed, setElapsed] = useState(0);
-  const [toast, setToast] = useState<{ message: string; type: string } | null>(
-    null,
-  );
+  const { setToast, ToastElement } = useToast();
 
   // On mount, check if the employee already has an active shift and restore state
   useEffect(() => {
@@ -127,14 +125,7 @@ const ShiftBtn = ({ employeeId }: { employeeId: string }) => {
       >
         {isLoading ? "Loading..." : isOn ? "End Shift" : "Start Shift"}
       </Button>
-
-      {toast && (
-        <Toasts
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
-      )}
+      {ToastElement}
     </div>
   );
 };
