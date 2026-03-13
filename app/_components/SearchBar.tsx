@@ -1,13 +1,22 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useRef } from "react";
+
 const SearchBar = () => {
   const router = useRouter();
 
+  const timeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   // Pushes a query param to the URL on every keystroke to filter employees.
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
+    clearTimeout(timeRef.current!);
+
     const searchValue = e.target.value;
-    router.push(`/employees?query=${searchValue}`);
+
+    timeRef.current = setTimeout(() => {
+      router.push(`/employees?query=${searchValue}`);
+    }, 300);
   };
 
   return (
