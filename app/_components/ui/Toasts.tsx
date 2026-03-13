@@ -15,7 +15,7 @@ const Toasts = ({
 }) => {
   // Auto-dismisses the toast after 5 seconds.
   useEffect(() => {
-    const timeout = setTimeout(onClose, 50000);
+    const timeout = setTimeout(onClose, 5000);
     return () => clearTimeout(timeout);
   }, [onClose,]);
 
