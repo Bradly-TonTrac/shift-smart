@@ -36,7 +36,11 @@ const fmt = {
 };
 
 // Generates and downloads a CSV file of all shift records for the employee.
-const exportCSV = (shifts: ShiftWithTasks[], name: string) => {
+const exportCSV = (
+  shifts: ShiftWithTasks[],
+  name: string,
+  reviewed: Set<string>,
+) => {
   const header = [
     "Date",
     "Clock In",
@@ -53,7 +57,7 @@ const exportCSV = (shifts: ShiftWithTasks[], name: string) => {
     fmt.mins(s.totalMinutes),
     s.tasks.length,
     s.tasks.filter((t) => t.status === "completed").length,
-    s.reviewed ? "Yes" : "No",
+    reviewed.has(s.id) ? "Yes" : "No",
   ]);
   const csv = [header, ...rows].map((r) => r.join(",")).join("\n");
   const a = document.createElement("a");
@@ -205,7 +209,7 @@ export default function ShiftHistoryClient({
               type="button"
               size="sm"
               variant="outline"
-              onClick={() => exportCSV(shifts, employeeName)}
+              onClick={() => exportCSV(shifts, employeeName, reviewed)}
               className="border border-gray-200 text-gray-600 text-xs hover:bg-gray-50"
             >
               Export CSV

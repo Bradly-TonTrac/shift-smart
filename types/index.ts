@@ -36,10 +36,9 @@ export interface Task {
   createdAt?: string;
 }
 
-// Extends TimeStamp with tasks and reviewed status — used in shift history.
+// Extends TimeStamp with tasks — used in shift history.
 export interface ShiftWithTasks extends TimeStamp {
   tasks: Task[];
-  reviewed?: boolean;
 }
 
 // Props for the shared EmployeeProfilePage component.

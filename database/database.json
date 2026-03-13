@@ -17,14 +17,6 @@
       "identity": "Employee21036"
     },
     {
-      "id": "297c",
-      "name": "Noah Peterson",
-      "email": "noah.peterson@TT.org",
-      "department": "Marketing",
-      "role": "Marketing Assistant",
-      "identity": "Employee21037"
-    },
-    {
       "id": "81da",
       "name": "Emma Richardson",
       "email": "emma.richardson@TT.org",
@@ -215,6 +207,14 @@
       "department": "Engineering",
       "role": "Junior",
       "identity": "bradly@Test"
+    },
+    {
+      "id": "a0dd",
+      "name": "Bradly Chauke",
+      "email": "languli@gmail.com",
+      "department": "Information Technology",
+      "role": "Intermediate",
+      "identity": "2003Brad"
     }
   ],
   "timeStamps": [
@@ -561,6 +561,30 @@
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
+    },
+    {
+      "id": "12b9",
+      "employeeId": null,
+      "clockIn": "2026-03-13T06:52:44.594Z",
+      "clockOut": "2026-03-13T06:52:45.976Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "aae3",
+      "employeeId": null,
+      "clockIn": "2026-03-13T06:52:47.258Z",
+      "clockOut": "2026-03-13T06:52:49.606Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "6b24",
+      "employeeId": null,
+      "clockIn": "2026-03-13T06:53:01.314Z",
+      "clockOut": "2026-03-13T06:53:04.786Z",
+      "totalMinutes": 0,
+      "status": "completed"
     }
   ],
   "tasks": [
