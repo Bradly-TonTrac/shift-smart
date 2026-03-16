@@ -66,13 +66,13 @@ const EmployeeForm = ({
     router.push("/employees");
   };
 
-  //**********Under construction *********/
+  // Fires the correct action based on what the admin confirmed — delete or edit.
   const handleConfirm = () => {
     if (pendingAction === "delete") handleDelete();
+    if (pendingAction === "edit") handleSubmit(onSubmit)();
     setConfirmOpen(false);
     setPendingAction(null);
   };
-
   // Saves the form — updates the employee if editing, creates a new one if adding.
   const onSubmit = async (data: EmployeeFormData) => {
     if (employee) {
@@ -279,7 +279,15 @@ const EmployeeForm = ({
         </div>
         <div className="px-6 pb-6 flex flex-col gap-2 border-t border-gray-100 pt-4">
           <Button
-            type="submit"
+            type={employee ? "button" : "submit"}
+            onClick={
+              employee
+                ? () => {
+                    setPendingAction("edit");
+                    setConfirmOpen(true);
+                  }
+                : undefined
+            }
             className="w-full py-2 rounded-lg bg-gray-900 text-white text-xs font-semibold tracking-wide hover:bg-gray-700 transition-colors"
           >
             {employee ? "Save Changes" : "Add Employee"}
@@ -297,6 +305,15 @@ const EmployeeForm = ({
           )}
         </div>
       </form>
+      <ConfirmDialog
+        isOpen={confirmOpen}
+        message={`Are you sure you want to save changes to ${employee?.name}?`}
+        onConfirm={handleConfirm}
+        onCancel={() => {
+          setConfirmOpen(false);
+          setPendingAction(null);
+        }}
+      />
       {ToastElement}
     </div>
   );

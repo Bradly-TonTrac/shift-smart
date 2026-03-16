@@ -74,7 +74,7 @@
     },
     {
       "id": "69c3",
-      "name": "Sarah Mitchell",
+      "name": "Sarah Mitchels",
       "email": "sarah@gmail.com",
       "department": "Marketing",
       "role": "employee",
@@ -183,14 +183,6 @@
       "department": "Engineering",
       "role": "Junior",
       "identity": "bradly@Test"
-    },
-    {
-      "id": "a0dd",
-      "name": "Bradly Chauke",
-      "email": "languli@gmail.com",
-      "department": "Information Technology",
-      "role": "Intermediate",
-      "identity": "2003Brad"
     },
     {
       "id": "c745",
