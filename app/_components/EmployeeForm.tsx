@@ -16,6 +16,7 @@ import { getColors } from "@/lib/utils/departments";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/lib/hooks/useToast";
 import Link from "next/link";
+import ConfirmDialog from "./ConfirmDialog";
 
 const EmployeeForm = ({
   employee,
@@ -23,6 +24,11 @@ const EmployeeForm = ({
 }: EmployeeFormProp & { role?: string }) => {
   const [isEditing, setIsEditing] = useState(!employee);
   const { setToast, ToastElement } = useToast();
+
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [pendingAction, setPendingAction] = useState<"delete" | "edit" | null>(
+    null,
+  );
 
   const {
     register,
@@ -58,6 +64,13 @@ const EmployeeForm = ({
     });
 
     router.push("/employees");
+  };
+
+  //**********Under construction *********/
+  const handleConfirm = () => {
+    if (pendingAction === "delete") handleDelete();
+    setConfirmOpen(false);
+    setPendingAction(null);
   };
 
   // Saves the form — updates the employee if editing, creates a new one if adding.
@@ -161,7 +174,10 @@ const EmployeeForm = ({
                   size="sm"
                   variant="outline"
                   type="button"
-                  onClick={handleDelete}
+                  onClick={() => {
+                    setPendingAction("delete");
+                    setConfirmOpen(true);
+                  }}
                   className="w-full py-2 rounded-lg border   hover:cursor-pointer border-red-200 text-red-500 text-xs font-semibold hover:bg-red-50 transition-colors"
                 >
                   Delete Employee
@@ -170,6 +186,15 @@ const EmployeeForm = ({
             )}
           </div>
         </div>
+        <ConfirmDialog
+          isOpen={confirmOpen}
+          message={`Are you sure you want to delete ${employee?.name}? This cannot be undone.`}
+          onConfirm={handleConfirm}
+          onCancel={() => {
+            setConfirmOpen(false);
+            setPendingAction(null);
+          }}
+        />
         {ToastElement}
       </div>
     );
@@ -226,7 +251,7 @@ const EmployeeForm = ({
               {errors.department?.message}
             </p>
           </div>
-          
+
           <div className="flex flex-col gap-1">
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Role

@@ -79,3 +79,11 @@ export interface TasksTabProps {
   sessionId?: string;
   employees?: { id: string; name: string }[];
 }
+
+//
+export interface ConfirmDialogProps {
+  isOpen: boolean;
+  message: string;
+  onConfirm: () => void;
+  onCancel: () => void;
+}
