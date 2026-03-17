@@ -231,14 +231,6 @@
       "department": "Marketing",
       "role": "Content Strategist",
       "identity": "EMP-009"
-    },
-    {
-      "id": "97bd",
-      "name": "Fatima Al-Hassan",
-      "email": "fatima.alhassan@company.com",
-      "department": "Marketing",
-      "role": "Social Media Specialistings",
-      "identity": "EMP-010"
     }
   ],
   "timeStamps": [
@@ -806,14 +798,6 @@
       "id": "2854",
       "employeeId": "9a1b",
       "clockIn": "2026-03-17T05:37:48.865Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
-    },
-    {
-      "id": "ee41",
-      "employeeId": "97bd",
-      "clockIn": "2026-03-17T05:43:23.834Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"

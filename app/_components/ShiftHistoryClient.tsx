@@ -7,33 +7,10 @@ import { getTasksByDate } from "@/lib/actions/taskAction";
 import { useToast } from "@/lib/hooks/useToast";
 import { Button } from "@/components/ui/button";
 import { ShiftHistoryClientProps } from "@/types";
-
+import { formatDate } from "@/lib/utils/formatters";
+import { formatTime } from "@/lib/utils/formatters";
+import { formatMins } from "@/lib/utils/formatters";
 // *************** Helpers ***************
-const fmt = {
-  date: (s: string) => {
-    if (!s) return "";
-    const d = new Date(s);
-    return isNaN(d.getTime())
-      ? ""
-      : d.toLocaleDateString("en-ZA", {
-          weekday: "short",
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        });
-  },
-  time: (s: string) => {
-    if (!s) return "—";
-    const d = new Date(s);
-    return isNaN(d.getTime())
-      ? "—"
-      : d.toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit" });
-  },
-  mins: (m: number | string) => {
-    const n = Number(m) || 0;
-    return n === 0 ? "—" : `${Math.floor(n / 60)}h ${n % 60}m`;
-  },
-};
 
 // Generates and downloads a CSV file of all shift records for the employee.
 const exportCSV = (
@@ -51,10 +28,10 @@ const exportCSV = (
     "Reviewed",
   ];
   const rows = shifts.map((s) => [
-    fmt.date(s.clockIn),
-    fmt.time(s.clockIn),
-    s.clockOut ? fmt.time(s.clockOut) : "Active",
-    fmt.mins(s.totalMinutes),
+    formatDate(s.clockIn),
+    formatTime(s.clockIn),
+    s.clockOut ? formatTime(s.clockOut) : "Active",
+    formatMins(s.totalMinutes),
     s.tasks.length,
     s.tasks.filter((t) => t.status === "completed").length,
     reviewed.has(s.id) ? "Yes" : "No",
@@ -182,7 +159,7 @@ export default function ShiftHistoryClient({
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         {[
           { label: "Total Shifts", value: String(shifts.length) },
-          { label: "Total Hours", value: fmt.mins(totalMins) },
+          { label: "Total Hours", value: formatMins(totalMins) },
           { label: "Tasks Done", value: `${doneTasks}/${allTasks}` },
           { label: "Reviewed", value: `${reviewed.size}/${shifts.length}` },
         ].map((s) => (
@@ -300,16 +277,16 @@ export default function ShiftHistoryClient({
 
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-gray-800">
-                      {fmt.date(shift.clockIn)}
+                      {formatDate(shift.clockIn)}
                     </p>
                     <p className="text-xs text-gray-400 mt-0.5 font-mono">
-                      {fmt.time(shift.clockIn)} —{" "}
-                      {shift.clockOut ? fmt.time(shift.clockOut) : "Active"}
+                      {formatTime(shift.clockIn)} —{" "}
+                      {shift.clockOut ? formatTime(shift.clockOut) : "Active"}
                     </p>
                   </div>
 
                   <span className="text-sm font-bold text-gray-700 shrink-0">
-                    {fmt.mins(shift.totalMinutes)}
+                    {formatMins(shift.totalMinutes)}
                   </span>
 
                   {total > 0 && (
@@ -349,16 +326,16 @@ export default function ShiftHistoryClient({
                     {/* Summary */}
                     <div className="grid grid-cols-4 gap-4 py-3 border-b border-gray-100 mb-4">
                       {[
-                        { label: "Clock In", value: fmt.time(shift.clockIn) },
+                        { label: "Clock In", value: formatTime(shift.clockIn) },
                         {
                           label: "Clock Out",
                           value: shift.clockOut
-                            ? fmt.time(shift.clockOut)
+                            ? formatTime(shift.clockOut)
                             : "Active",
                         },
                         {
                           label: "Duration",
-                          value: fmt.mins(shift.totalMinutes),
+                          value: formatMins(shift.totalMinutes),
                         },
                         { label: "Tasks", value: `${done}/${total} done` },
                       ].map((item) => (

@@ -3,28 +3,8 @@ import { useState, useEffect } from "react";
 import TasksTab from "./TaskTab";
 import ShiftBtn from "./ShiftBtn";
 import { ProfileTabsProps } from "@/types";
-
-// Date and time formatters for shift display — locale set to en-ZA.
-const fmt = {
-  date: (s: string) => {
-    if (!s) return "";
-    const d = new Date(s);
-    return isNaN(d.getTime())
-      ? ""
-      : d.toLocaleDateString("en-ZA", {
-          weekday: "short",
-          day: "numeric",
-          month: "short",
-        });
-  },
-  time: (s: string) => {
-    if (!s) return "Active";
-    const d = new Date(s);
-    return isNaN(d.getTime())
-      ? ""
-      : d.toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit" });
-  },
-};
+import { formatDate } from "@/lib/utils/formatters";
+import { formatTime } from "@/lib/utils/formatters";
 
 const ProfileTabs = ({
   employeeId,
@@ -98,11 +78,11 @@ const ProfileTabs = ({
                 <div key={ts.id} className="flex items-center justify-between">
                   <div>
                     <p className="text-xs font-medium text-gray-700">
-                      {fmt.date(ts.clockIn)}
+                      {formatDate(ts.clockIn)}
                     </p>
                     <p className="text-xs text-gray-400">
-                      {fmt.time(ts.clockIn)} —{" "}
-                      {ts.clockOut ? fmt.time(ts.clockOut) : "Active"}
+                      {formatTime(ts.clockIn)} —{" "}
+                      {ts.clockOut ? formatTime(ts.clockOut) : "Active"}
                     </p>
                   </div>
                   <span className="text-xs font-semibold text-gray-700">
