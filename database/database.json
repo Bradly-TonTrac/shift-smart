@@ -177,14 +177,6 @@
       "identity": "EMP110"
     },
     {
-      "id": "ea87",
-      "name": "Bradly Langutani Chauke",
-      "email": "bradlychauke@gmail.com",
-      "department": "Engineering",
-      "role": "Junior",
-      "identity": "bradly@Test"
-    },
-    {
       "id": "c745",
       "name": "James Okafor",
       "email": "james.okafor@company.com",
@@ -245,14 +237,14 @@
       "name": "Fatima Al-Hassan",
       "email": "fatima.alhassan@company.com",
       "department": "Marketing",
-      "role": "Social Media Specialist",
+      "role": "Social Media Specialistings",
       "identity": "EMP-010"
     }
   ],
   "timeStamps": [
     {
       "id": "2436",
-      "employeeId": "ea87",
+      "employeeId": null,
       "clockIn": "2026-03-13T11:33:17.063Z",
       "clockOut": "2026-03-13T12:50:39.507Z",
       "totalMinutes": 77,
@@ -272,14 +264,6 @@
       "clockIn": "2026-03-13T12:35:51.913Z",
       "clockOut": "2026-03-16T04:51:25.914Z",
       "totalMinutes": 3856,
-      "status": "completed"
-    },
-    {
-      "id": "a76c",
-      "employeeId": "262a",
-      "clockIn": "2026-03-13T12:36:20.849Z",
-      "clockOut": "2026-03-16T04:52:52.480Z",
-      "totalMinutes": 3857,
       "status": "completed"
     },
     {
@@ -468,7 +452,7 @@
     },
     {
       "id": "3c59",
-      "employeeId": "ea87",
+      "employeeId": null,
       "clockIn": "2026-03-16T04:50:56.587Z",
       "clockOut": "2026-03-16T05:16:35.936Z",
       "totalMinutes": 26,
@@ -486,9 +470,9 @@
       "id": "8770",
       "employeeId": "c715",
       "clockIn": "2026-03-16T04:51:49.259Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-17T04:57:13.357Z",
+      "totalMinutes": 1445,
+      "status": "completed"
     },
     {
       "id": "a9ba",
@@ -550,6 +534,286 @@
       "id": "a983",
       "employeeId": "af8d",
       "clockIn": "2026-03-16T06:28:15.460Z",
+      "clockOut": "2026-03-17T04:58:24.254Z",
+      "totalMinutes": 1350,
+      "status": "completed"
+    },
+    {
+      "id": "4c52",
+      "employeeId": null,
+      "clockIn": "2026-03-16T12:32:16.892Z",
+      "clockOut": "2026-03-16T12:32:18.750Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "f825",
+      "employeeId": null,
+      "clockIn": "2026-03-16T12:32:20.006Z",
+      "clockOut": "2026-03-16T12:32:20.906Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "f42c",
+      "employeeId": null,
+      "clockIn": "2026-03-16T12:32:22.557Z",
+      "clockOut": "2026-03-16T12:33:56.733Z",
+      "totalMinutes": 2,
+      "status": "completed"
+    },
+    {
+      "id": "5842",
+      "employeeId": "c715",
+      "clockIn": "2026-03-17T04:57:18.616Z",
+      "clockOut": "2026-03-17T04:57:19.866Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "2d69",
+      "employeeId": "c715",
+      "clockIn": "2026-03-17T05:04:49.375Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "b211",
+      "employeeId": "262a",
+      "clockIn": "2026-03-17T05:06:11.100Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "df39",
+      "employeeId": "81da",
+      "clockIn": "2026-03-17T05:06:52.813Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "d598",
+      "employeeId": "ff37",
+      "clockIn": "2026-03-17T05:07:58.766Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "c7fc",
+      "employeeId": "dc0d",
+      "clockIn": "2026-03-17T05:10:03.039Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "34cb",
+      "employeeId": "240c",
+      "clockIn": "2026-03-17T05:10:53.809Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "9ab4",
+      "employeeId": "c1ce",
+      "clockIn": "2026-03-17T05:11:35.716Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "8a8a",
+      "employeeId": "1b41",
+      "clockIn": "2026-03-17T05:12:35.456Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "1a11",
+      "employeeId": "ecf2",
+      "clockIn": "2026-03-17T05:13:04.156Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "3b40",
+      "employeeId": "69c3",
+      "clockIn": "2026-03-17T05:13:52.682Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "8f52",
+      "employeeId": "b944",
+      "clockIn": "2026-03-17T05:15:13.892Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "cced",
+      "employeeId": "5ab0",
+      "clockIn": "2026-03-17T05:16:40.330Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "4638",
+      "employeeId": "fee1",
+      "clockIn": "2026-03-17T05:17:27.939Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "3ba0",
+      "employeeId": "432f",
+      "clockIn": "2026-03-17T05:19:02.268Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "49f2",
+      "employeeId": "638b",
+      "clockIn": "2026-03-17T05:19:24.128Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "6980",
+      "employeeId": "b111",
+      "clockIn": "2026-03-17T05:19:43.536Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "bdcb",
+      "employeeId": "45f9",
+      "clockIn": "2026-03-17T05:21:49.334Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "0f2d",
+      "employeeId": "a6bc",
+      "clockIn": "2026-03-17T05:22:18.058Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "d6ba",
+      "employeeId": "c2f1",
+      "clockIn": "2026-03-17T05:22:39.937Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "982f",
+      "employeeId": "970a",
+      "clockIn": "2026-03-17T05:23:40.184Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "46eb",
+      "employeeId": "931d",
+      "clockIn": "2026-03-17T05:24:28.861Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "4bc1",
+      "employeeId": "6cae",
+      "clockIn": "2026-03-17T05:25:35.134Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "7ac4",
+      "employeeId": "c745",
+      "clockIn": "2026-03-17T05:26:47.400Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "2743",
+      "employeeId": "9041",
+      "clockIn": "2026-03-17T05:27:22.034Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "f734",
+      "employeeId": "9041",
+      "clockIn": "2026-03-17T05:35:51.726Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "6169",
+      "employeeId": "32b8",
+      "clockIn": "2026-03-17T05:36:12.670Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "f883",
+      "employeeId": "d4ee",
+      "clockIn": "2026-03-17T05:36:36.403Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "1a4c",
+      "employeeId": "7f4e",
+      "clockIn": "2026-03-17T05:37:01.542Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "0bdf",
+      "employeeId": "af8d",
+      "clockIn": "2026-03-17T05:37:23.202Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "2854",
+      "employeeId": "9a1b",
+      "clockIn": "2026-03-17T05:37:48.865Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "ee41",
+      "employeeId": "97bd",
+      "clockIn": "2026-03-17T05:43:23.834Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
@@ -632,6 +896,17 @@
       "assignedBy": "admin",
       "shiftDate": "2026-03-13",
       "createdAt": "2026-03-13T13:06:41.792Z"
+    },
+    {
+      "id": "325d",
+      "title": "Request",
+      "notes": "Can you Start a new shift already.",
+      "priority": "high",
+      "status": "pending",
+      "assignedTo": "af8d",
+      "assignedBy": "admin",
+      "shiftDate": "2026-03-17",
+      "createdAt": "2026-03-17T05:00:36.110Z"
     }
   ]
 }

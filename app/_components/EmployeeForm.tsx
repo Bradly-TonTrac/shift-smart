@@ -17,6 +17,10 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/lib/hooks/useToast";
 import Link from "next/link";
 import ConfirmDialog from "./ConfirmDialog";
+import { getTasksByEmployee } from "@/lib/actions/taskAction";
+import { deleteTask } from "@/lib/actions/taskAction";
+import { getAllShifts } from "@/lib/actions/employeesActions";
+import { deleteShift } from "@/lib/actions/employeesActions";
 
 const EmployeeForm = ({
   employee,
@@ -52,11 +56,25 @@ const EmployeeForm = ({
   const handleDelete = async () => {
     if (!employee?.id) return;
 
+    // Delete active shifts.
     const activeShifts = await getShiftStatus(employee.id);
     for (const shift of activeShifts) {
       await deleteTimeStamp(shift, shift.id);
     }
 
+    // Delete tasks
+    const tasks = await getTasksByEmployee(employee.id);
+    for (const task of tasks) {
+      await deleteTask(task.id!);
+    }
+
+    // Delete completed shifts
+    const completedShifts = await getAllShifts(employee.id);
+    for (const shift of completedShifts) {
+      await deleteShift(shift.id);
+    }
+
+    // delete employee
     const result = await deleteEmployee(employee.id);
     setToast({
       message: result.message,

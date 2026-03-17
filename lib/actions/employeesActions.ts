@@ -3,7 +3,7 @@ import { Employee } from "@/types";
 import { revalidatePath } from "next/cache";
 import axiosClient from "../api/axiosClient";
 import { TimeStamp } from "@/types";
-
+import { sendWelcomeEmail } from "../sendEmail";
 //fetching all employees
 export const getEmployees = async (): Promise<Employee[]> => {
   try {
@@ -79,7 +79,7 @@ export const addEmployee = async (employee: Employee) => {
     }
 
     const { data } = await axiosClient.post(`/employees`, employee);
-
+    await sendWelcomeEmail(employee.name, employee.email, employee.identity);
     revalidatePath("/employees");
     return {
       success: true,

@@ -80,7 +80,7 @@ export interface TasksTabProps {
   employees?: { id: string; name: string }[];
 }
 
-//
+//Props for the reusable confirmation dialog component.
 export interface ConfirmDialogProps {
   isOpen: boolean;
   message: string;
