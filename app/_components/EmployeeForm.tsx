@@ -23,6 +23,7 @@ import { getAllShifts } from "@/lib/actions/employeesActions";
 import { deleteShift } from "@/lib/actions/employeesActions";
 import { getInitials } from "@/lib/utils/formatters";
 import FormInput from "./ui/FormInput";
+import Avatar from "./ui/Avatar";
 
 const EmployeeForm = ({
   employee,
@@ -35,7 +36,6 @@ const EmployeeForm = ({
   const [pendingAction, setPendingAction] = useState<"delete" | "edit" | null>(
     null,
   );
-
   const {
     register,
     handleSubmit,
@@ -114,7 +114,6 @@ const EmployeeForm = ({
 
   // Get the avatar color and initials based on the employee's department and name.
   const colors = getColors(employee?.department ?? "");
-  const initials = getInitials(employee?.name ?? "");
 
   // FORM MODE — shows the form for adding a new employee or editing an existing one.
   if (employee && !isEditing) {
@@ -123,11 +122,11 @@ const EmployeeForm = ({
         <div className="w-80 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           <div className={`h-20 ${colors.bg}`} />
           <div className="px-6 -mt-10 mb-4">
-            <div
-              className={`w-16 h-16 rounded-2xl ${colors.avatar} flex items-center justify-center text-white text-xl font-bold shadow-sm border-4 border-white`}
-            >
-              {initials}
-            </div>
+            <Avatar
+              name={employee.name}
+              department={employee.department}
+              size="lg"
+            />
           </div>
           <div className="px-6 pb-2">
             <h2 className="text-lg font-bold text-gray-900 leading-tight">

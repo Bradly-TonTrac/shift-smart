@@ -15,7 +15,7 @@ import {
 import SearchBar from "../_components/SearchBar";
 import { PiEmptyThin } from "react-icons/pi";
 import { PER_PAGE } from "@/lib/constants";
-import { getInitials } from "@/lib/utils/formatters";
+import Avatar from "../_components/ui/Avatar";
 
 const employeesPage = async ({
   searchParams,
@@ -92,7 +92,6 @@ const employeesPage = async ({
                 {/* Render each employee row with initials, shift status and department color */}
                 {paginated.map((emp) => {
                   const colors = getColors(emp.department);
-                  const initials = getInitials(emp.name);
                   const isOnShift = statuses.some(
                     (s: { employeeId: string }) => s.employeeId === emp.id,
                   );
@@ -104,11 +103,11 @@ const employeesPage = async ({
                     >
                       <TableCell className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div
-                            className={`w-8 h-8 rounded-xl ${colors.avatar} flex items-center justify-center text-white text-xs font-bold shrink-0`}
-                          >
-                            {initials}
-                          </div>
+                          <Avatar
+                            name={emp.name}
+                            department={emp.department}
+                            size="sm"
+                          />
                           <div>
                             <Link
                               href={`/employees/${emp.id}`}
