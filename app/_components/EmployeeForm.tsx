@@ -22,6 +22,7 @@ import { deleteTask } from "@/lib/actions/taskAction";
 import { getAllShifts } from "@/lib/actions/employeesActions";
 import { deleteShift } from "@/lib/actions/employeesActions";
 import { getInitials } from "@/lib/utils/formatters";
+import FormInput from "./ui/FormInput";
 
 const EmployeeForm = ({
   employee,
@@ -230,66 +231,40 @@ const EmployeeForm = ({
           </h2>
         </div>
         <div className="px-6 py-5 flex flex-col gap-4">
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              Name
-            </label>
-            <input
-              {...register("name")}
-              placeholder="Bradly TonTrac"
-              className="border-b border-gray-200 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:border-gray-500 bg-transparent transition-colors"
-            />
-            <p className="text-red-400 text-xs h-3">{errors.name?.message}</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              Email
-            </label>
-            <input
-              {...register("email")}
-              placeholder="bradly@TT.org"
-              className="border-b border-gray-200 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:border-gray-500 bg-transparent transition-colors"
-            />
-            <p className="text-red-400 text-xs h-3">{errors.email?.message}</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              Department
-            </label>
-            <input
-              {...register("department")}
-              placeholder="HR-Management"
-              className="border-b border-gray-200 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:border-gray-500 bg-transparent transition-colors"
-            />
-            <p className="text-red-400 text-xs h-3">
-              {errors.department?.message}
-            </p>
-          </div>
+          <FormInput
+            label="Name"
+            error={errors.name?.message}
+            placeholder="Bradly TonTrac"
+            {...register("name")}
+          />
 
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              Role
-            </label>
-            <input
-              {...register("role")}
-              placeholder="Junior HR"
-              className="border-b border-gray-200 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:border-gray-500 bg-transparent transition-colors"
-            />
-            <p className="text-red-400 text-xs h-3">{errors.role?.message}</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              Employee ID
-            </label>
-            <input
-              {...register("identity")}
-              placeholder="Employee21034"
-              className="border-b border-gray-200 py-1.5 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:border-gray-500 bg-transparent transition-colors"
-            />
-            <p className="text-red-400 text-xs h-3">
-              {errors.identity?.message}
-            </p>
-          </div>
+          <FormInput
+            label="Email"
+            error={errors.email?.message}
+            placeholder="bradly@TT.org"
+            {...register("email")}
+          />
+
+          <FormInput
+            label="Department"
+            error={errors.department?.message}
+            placeholder="HR-Management"
+            {...register("department")}
+          />
+
+          <FormInput
+            label="Role"
+            error={errors.role?.message}
+            placeholder="Junior HR"
+            {...register("role")}
+          />
+
+          <FormInput
+            label="Employee ID"
+            error={errors.identity?.message}
+            placeholder="Employee21034"
+            {...register("identity")}
+          />
         </div>
         <div className="px-6 pb-6 flex flex-col gap-2 border-t border-gray-100 pt-4">
           <Button
