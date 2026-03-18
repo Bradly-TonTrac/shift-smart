@@ -21,6 +21,7 @@ import { getTasksByEmployee } from "@/lib/actions/taskAction";
 import { deleteTask } from "@/lib/actions/taskAction";
 import { getAllShifts } from "@/lib/actions/employeesActions";
 import { deleteShift } from "@/lib/actions/employeesActions";
+import { getInitials } from "@/lib/utils/formatters";
 
 const EmployeeForm = ({
   employee,
@@ -112,12 +113,7 @@ const EmployeeForm = ({
 
   // Get the avatar color and initials based on the employee's department and name.
   const colors = getColors(employee?.department ?? "");
-  const initials =
-    employee?.name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .toUpperCase() ?? "";
+  const initials = getInitials(employee?.name ?? "");
 
   // FORM MODE — shows the form for adding a new employee or editing an existing one.
   if (employee && !isEditing) {

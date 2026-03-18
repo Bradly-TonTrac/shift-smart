@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/table";
 import SearchBar from "../_components/SearchBar";
 import { PiEmptyThin } from "react-icons/pi";
+import { PER_PAGE } from "@/lib/constants";
+import { getInitials } from "@/lib/utils/formatters";
 
 const employeesPage = async ({
   searchParams,
@@ -35,7 +37,7 @@ const employeesPage = async ({
 
   // Calculate pagination slice based on current page.
   const currentPage = Number(page) || 1;
-  const perPage = 10;
+  const perPage = PER_PAGE;
   const totalPage = Math.ceil(filtered.length / perPage);
   const paginated = filtered.slice(
     (currentPage - 1) * perPage,
@@ -90,11 +92,7 @@ const employeesPage = async ({
                 {/* Render each employee row with initials, shift status and department color */}
                 {paginated.map((emp) => {
                   const colors = getColors(emp.department);
-                  const initials = emp.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")
-                    .toUpperCase();
+                  const initials = getInitials(emp.name);
                   const isOnShift = statuses.some(
                     (s: { employeeId: string }) => s.employeeId === emp.id,
                   );
