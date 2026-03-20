@@ -30,7 +30,7 @@ const EmployeeForm = ({
   role,
 }: EmployeeFormProp & { role?: string }) => {
   const [isEditing, setIsEditing] = useState(!employee);
-  const { setToast, ToastElement } = useToast();
+  const { setToast, showToast, ToastElement } = useToast();
 
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [pendingAction, setPendingAction] = useState<"delete" | "edit" | null>(
@@ -61,7 +61,7 @@ const EmployeeForm = ({
     // Delete active shifts.
     const activeShifts = await getShiftStatus(employee.id);
     for (const shift of activeShifts) {
-      await deleteTimeStamp( shift.id);
+      await deleteTimeStamp(shift.id);
     }
 
     // Delete tasks
@@ -78,10 +78,7 @@ const EmployeeForm = ({
 
     // delete employee
     const result = await deleteEmployee(employee.id);
-    setToast({
-      message: result.message,
-      type: result.success ? "success" : "error",
-    });
+    showToast(result);
 
     router.push("/employees");
   };
