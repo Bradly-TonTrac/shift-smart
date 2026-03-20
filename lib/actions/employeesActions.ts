@@ -48,7 +48,6 @@ export const getEmployeeByIdentity = async (
 ): Promise<Employee | null> => {
   try {
     const { data } = await axiosClient.get(`/employees?identity=${identity}`);
-    console.log(data);
     return data[0] ?? null;
   } catch (error) {
     throw new Error("Sorry we ran  into a problem  with the ID's");
