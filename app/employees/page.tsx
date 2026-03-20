@@ -22,7 +22,10 @@ const EmployeesPage = async ({
 }: {
   searchParams: Promise<{ query?: string; page?: string }>;
 }) => {
-  const employees = await getEmployees();
+  const [employees, statuses] = await Promise.all([
+    getEmployees(),
+    shiftStatus(),
+  ]);
 
   const { query, page } = await searchParams;
 
@@ -32,8 +35,6 @@ const EmployeesPage = async ({
         emp.name.toLowerCase().includes(query.toLowerCase()),
       )
     : employees;
-
-  const statuses = await shiftStatus();
 
   // Calculate pagination slice based on current page.
   const currentPage = Number(page) || 1;
