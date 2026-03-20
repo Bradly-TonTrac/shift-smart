@@ -326,17 +326,17 @@
       "id": "d8f8",
       "employeeId": "b944",
       "clockIn": "2026-03-17T12:10:26.554Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-20T08:11:21.277Z",
+      "totalMinutes": 4081,
+      "status": "completed"
     },
     {
       "id": "58db",
       "employeeId": "5ab0",
       "clockIn": "2026-03-17T12:10:53.258Z",
-      "clockOut": "",
-      "totalMinutes": "",
-      "status": "active"
+      "clockOut": "2026-03-20T08:11:49.347Z",
+      "totalMinutes": 4081,
+      "status": "completed"
     },
     {
       "id": "b9a9",
