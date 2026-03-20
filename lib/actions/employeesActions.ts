@@ -173,7 +173,7 @@ export const clockOut = async (id: string, clockIn: string) => {
 };
 
 //delete Timestamp
-export const deleteTimeStamp = async (timeStamp: TimeStamp, id: string) => {
+export const deleteTimeStamp = async ( id: string) => {
   try {
     const { data } = await axiosClient.delete(`/timeStamps/${id}`);
     revalidatePath("/employees");

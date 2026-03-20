@@ -61,7 +61,7 @@ const EmployeeForm = ({
     // Delete active shifts.
     const activeShifts = await getShiftStatus(employee.id);
     for (const shift of activeShifts) {
-      await deleteTimeStamp(shift, shift.id);
+      await deleteTimeStamp( shift.id);
     }
 
     // Delete tasks
