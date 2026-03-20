@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { TasksTabProps } from "@/types";
 import { useToast } from "@/lib/hooks/useToast";
 import { PRIORITY_META, STATUS_META } from "@/lib/constants";
+import EmptyState from "./ui/EmptyState";
 
 // Defines the cycle order when clicking the status button on a task.
 const STATUS_CYCLE: Task["status"][] = ["pending", "inprogress", "completed"];
@@ -322,14 +323,10 @@ const TasksTab = ({
             <span className="loading loading-spinner loading-md bg-cyan-400" />
           </div>
         ) : filtered.length === 0 ? (
-          <div className="py-10 text-center">
-            <p className="text-sm font-semibold text-gray-400">
-              No tasks found
-            </p>
-            <p className="text-xs text-gray-300 mt-1">
-              Add a task or adjust your filters
-            </p>
-          </div>
+
+
+          <EmptyState title="No tasks found" subtitle="Add a task or adjust your filters"/>
+    
         ) : (
           filtered.map((task, idx) => {
             const pri = PRIORITY_META[task.priority];

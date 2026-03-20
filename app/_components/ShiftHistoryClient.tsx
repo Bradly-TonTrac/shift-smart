@@ -10,7 +10,9 @@ import { ShiftHistoryClientProps } from "@/types";
 import { formatDate } from "@/lib/utils/formatters";
 import { formatTime } from "@/lib/utils/formatters";
 import { formatMins } from "@/lib/utils/formatters";
-// *************** Helpers ***************
+import EmptyState from "./ui/EmptyState";
+
+
 
 // Generates and downloads a CSV file of all shift records for the employee.
 const exportCSV = (
@@ -240,14 +242,10 @@ export default function ShiftHistoryClient({
 
       {/* Shift list */}
       {shifts.length === 0 ? (
-        <div className="bg-white border border-gray-100 rounded-2xl py-16 text-center shadow-sm">
-          <p className="text-sm font-semibold text-gray-400">
-            No shift history
-          </p>
-          <p className="text-xs text-gray-300 mt-1">
-            No completed shifts recorded
-          </p>
-        </div>
+        <EmptyState
+          title="No shift history"
+          subtitle="No completed shifts recorded"
+        />
       ) : (
         <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           {shifts.map((shift, idx) => {

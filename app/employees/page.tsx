@@ -13,9 +13,9 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import SearchBar from "../_components/SearchBar";
-import { PiEmptyThin } from "react-icons/pi";
 import { PER_PAGE } from "@/lib/constants";
 import Avatar from "../_components/ui/Avatar";
+import EmptyState from "../_components/ui/EmptyState";
 
 const employeesPage = async ({
   searchParams,
@@ -60,12 +60,10 @@ const employeesPage = async ({
         </div>
 
         {filtered.length === 0 ? (
-          <div className="flex justify-center gap-3 border mt-2 p-2 rounded">
-            <div className=" font-bold  flex items-center">
-              <p>No employees found matching your search</p>
-              <PiEmptyThin className="text-red-500" />
-            </div>
-          </div>
+          <EmptyState
+            title="No employees found"
+            subtitle="Try a different search term"
+          />
         ) : (
           <div className="mt-8 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
             <Table className="w-full text-sm">

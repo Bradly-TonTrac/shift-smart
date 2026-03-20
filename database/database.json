@@ -233,12 +233,12 @@
       "identity": "EMP-009"
     },
     {
-      "id": "6445",
+      "id": "4253",
       "name": "Bradly Chauke",
-      "email": "bradly@tontrac.co.za",
-      "department": "IT",
-      "role": "Serior Cloud Security",
-      "identity": "bradly@Test"
+      "email": "bradlychauke@gmail.com",
+      "department": "Engineering",
+      "role": "Senior",
+      "identity": "Employee21037"
     }
   ],
   "timeStamps": [
@@ -372,8 +372,40 @@
     },
     {
       "id": "9a73",
-      "employeeId": "6445",
+      "employeeId": null,
       "clockIn": "2026-03-17T12:16:46.600Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "2440",
+      "employeeId": null,
+      "clockIn": "2026-03-20T04:47:33.757Z",
+      "clockOut": "2026-03-20T04:48:34.941Z",
+      "totalMinutes": 1,
+      "status": "completed"
+    },
+    {
+      "id": "981b",
+      "employeeId": null,
+      "clockIn": "2026-03-20T04:48:42.081Z",
+      "clockOut": "2026-03-20T04:48:45.794Z",
+      "totalMinutes": 0,
+      "status": "completed"
+    },
+    {
+      "id": "e60c",
+      "employeeId": null,
+      "clockIn": "2026-03-20T04:48:43.942Z",
+      "clockOut": "",
+      "totalMinutes": "",
+      "status": "active"
+    },
+    {
+      "id": "22d7",
+      "employeeId": null,
+      "clockIn": "2026-03-20T04:48:45.182Z",
       "clockOut": "",
       "totalMinutes": "",
       "status": "active"
