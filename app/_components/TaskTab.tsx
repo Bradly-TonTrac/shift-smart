@@ -15,6 +15,7 @@ import { TasksTabProps } from "@/types";
 import { useToast } from "@/lib/hooks/useToast";
 import { PRIORITY_META, STATUS_META } from "@/lib/constants";
 import EmptyState from "./ui/EmptyState";
+import Badge from "./ui/Badge";
 
 // Defines the cycle order when clicking the status button on a task.
 const STATUS_CYCLE: Task["status"][] = ["pending", "inprogress", "completed"];
@@ -323,10 +324,10 @@ const TasksTab = ({
             <span className="loading loading-spinner loading-md bg-cyan-400" />
           </div>
         ) : filtered.length === 0 ? (
-
-
-          <EmptyState title="No tasks found" subtitle="Add a task or adjust your filters"/>
-    
+          <EmptyState
+            title="No tasks found"
+            subtitle="Add a task or adjust your filters"
+          />
         ) : (
           filtered.map((task, idx) => {
             const pri = PRIORITY_META[task.priority];
@@ -359,11 +360,7 @@ const TasksTab = ({
                     {task.title}
                   </p>
 
-                  <span
-                    className={`text-xs font-semibold px-2 py-0.5 rounded-full border shrink-0 ${pri.badge}`}
-                  >
-                    {pri.label}
-                  </span>
+                  <Badge type="priority" value={task.priority} />
 
                   <button
                     onClick={(e) => {

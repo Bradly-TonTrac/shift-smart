@@ -11,8 +11,7 @@ import { formatDate } from "@/lib/utils/formatters";
 import { formatTime } from "@/lib/utils/formatters";
 import { formatMins } from "@/lib/utils/formatters";
 import EmptyState from "./ui/EmptyState";
-
-
+import Badge from "./ui/Badge";
 
 // Generates and downloads a CSV file of all shift records for the employee.
 const exportCSV = (
@@ -386,32 +385,9 @@ export default function ShiftHistoryClient({
                                 {task.notes}
                               </span>
                             )}
-                            <span
-                              className={`text-xs font-semibold px-1.5 py-0.5 rounded-full shrink-0
-                              ${
-                                task.priority === "high"
-                                  ? "bg-red-50 text-red-400"
-                                  : task.priority === "medium"
-                                    ? "bg-amber-50 text-amber-500"
-                                    : "bg-emerald-50 text-emerald-500"
-                              }`}
-                            >
-                              {task.priority}
-                            </span>
-                            <span
-                              className={`text-xs font-semibold px-1.5 py-0.5 rounded-full shrink-0
-                              ${
-                                task.status === "completed"
-                                  ? "bg-emerald-50 text-emerald-500"
-                                  : task.status === "inprogress"
-                                    ? "bg-blue-50 text-blue-500"
-                                    : "bg-gray-50 text-gray-400"
-                              }`}
-                            >
-                              {task.status === "inprogress"
-                                ? "In Progress"
-                                : task.status}
-                            </span>
+
+                            <Badge type="priority" value={task.priority} />
+                            <Badge type="status" value={task.status} />
                           </div>
                         ))}
                       </div>
