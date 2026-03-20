@@ -21,7 +21,7 @@ export const getEmployee = async (id: string): Promise<Employee> => {
     const { data } = await axiosClient.get(`/employees/${id}`);
     return data;
   } catch (error) {
-    throw new Error("Failed to fetch a user");
+    throw new Error(`Failed to fetch employee with id: ${id}`);
   }
 };
 
@@ -50,7 +50,7 @@ export const getEmployeeByIdentity = async (
     const { data } = await axiosClient.get(`/employees?identity=${identity}`);
     return data[0] ?? null;
   } catch (error) {
-    throw new Error("Sorry we ran  into a problem  with the ID's");
+    throw new Error(`Failed to find employee with identity: ${identity}`);
   }
 };
 
@@ -192,7 +192,7 @@ export const getShiftStatus = async (employeeId: string) => {
     );
     return data;
   } catch (error) {
-    throw new Error(" Time Stamp error not valid");
+    throw new Error(`Failed to fetch active shift for employee: ${employeeId}`);
   }
 };
 
