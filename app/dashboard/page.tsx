@@ -4,7 +4,7 @@ import { shiftStatus } from "@/lib/actions/employeesActions";
 import { Button } from "@/components/ui/button";
 import StatCard from "../_components/ui/StatCard";
 
-const page = async () => {
+const DashboardPage = async () => {
   //fetching all the employees using server actions.
   const employeesExtractions = await getEmployees();
   const statuses = await shiftStatus();
@@ -62,4 +62,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default DashboardPage;
